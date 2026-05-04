@@ -1,0 +1,104 @@
+.experience-timeline {
+    position: relative;
+    padding-left: 3rem;
+    max-width: 900px;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.2rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), var(--accent), transparent);
+}
+
+.mission-card {
+    position: relative;
+    background: var(--surface-color);
+    border: 1px solid var(--surface-border);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+    transition: all 0.4s ease;
+    box-shadow: var(--shadow-soft);
+}
+
+.mission-org-logo {
+    position: absolute;
+    left: -4.3rem;
+    /* Align perfectly over the timeline line */
+    top: 2.5rem;
+    width: 50px;
+    height: 50px;
+    background: var(--bg-color);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    z-index: 2;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mission-card:hover {
+    border-color: var(--primary);
+    transform: translateX(10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.mission-card:hover .mission-org-logo {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+}
+
+.mission-date {
+    font-family: var(--font-mono);
+    color: var(--highlight);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+}
+
+.mission-content h3 {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.mission-org {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.mission-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.mission-list li {
+    color: var(--text-secondary);
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.8rem;
+    line-height: 1.6;
+}
+
+.mission-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}

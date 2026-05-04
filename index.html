@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar's Portfolio</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/controller.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Assets/controller.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta name="description"
+        content="Portfolio of Omar Abdelaziz, Game Developer and Software Engineer specializing in Unity, C#, web development, and interactive experiences. Explore projects, skills, and creative work.">
+
+    <meta name="keywords"
+        content="Omar Abdelaziz, Game Developer, Software Engineer, Unity Developer, C#, Web Developer, Portfolio, Game Development, Frontend Developer">
+
+    <meta name="author" content="Omar Abdelaziz">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:title" content="Omar Abdelaziz | Game Developer & Software Engineer">
+    <meta property="og:description"
+        content="Explore Omar's portfolio including game development projects, web apps, and creative software solutions.">
+    <meta property="og:image" content="https://yourdomain.com/preview.png">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Omar Abdelaziz Portfolio">
+    <meta name="twitter:description"
+        content="Game Developer & Software Engineer portfolio showcasing Unity and web projects.">
+    <meta name="twitter:image" content="https://yourdomain.com/preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/intro-controller.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="styles/experience.css">
+    <link rel="stylesheet" href="styles/community.css">
+    <link rel="stylesheet" href="styles/linkedin-feed.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+
+<body class="theme-dark no-scroll">
+    <!-- Simulation Layer (Particles Background) -->
+    <canvas id="simulation-bg" class="simulation-bg"></canvas>
+
+    <!-- Intro Overlay -->
+    <div id="intro-overlay" class="intro-overlay">
+        <!-- Ripple Effect container -->
+        <div class="ripple-container">
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+        </div>
+        <div class="controller-wrapper" id="controller-wrapper">
+            <div class="controller" id="controller">
+                <svg width="280" height="190" viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M50 20H150C170 20 185 35 185 55V85C185 110 165 130 140 130H60C35 130 15 110 15 85V55C15 35 30 20 50 20Z"
+                        fill="#1E293B" stroke="#3B82F6" stroke-width="4" />
+                    <!-- D-Pad -->
+                    <path d="M45 75H65M55 65V85" stroke="#22D3EE" stroke-width="6" stroke-linecap="round" />
+                    <!-- Action Buttons -->
+                    <circle cx="145" cy="60" r="6" fill="#8B5CF6" />
+                    <circle cx="160" cy="75" r="6" fill="#EC4899" />
+                    <circle cx="145" cy="90" r="6" fill="#3B82F6" />
+                    <circle cx="130" cy="75" r="6" fill="#22D3EE" />
+                    <!-- Analog Sticks -->
+                    <circle cx="80" cy="100" r="15" fill="#334155" stroke="#3B82F6" stroke-width="2" />
+                    <circle cx="120" cy="100" r="15" fill="#334155" stroke="#3B82F6" stroke-width="2" />
+                    <!-- Touchpad -->
+                    <rect x="75" y="30" width="50" height="35" rx="5" fill="#0F172A" stroke="#475569"
+                        stroke-width="2" />
+                </svg>
+                <div class="controller-glow"></div>
+            </div>
+            <div id="click-to-start" class="click-to-start">Click to Start</div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar hidden-nav" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">OMAR DEV</a>
+
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link active" data-section="hero">
+                    <span class="nav-text">Home</span>
+                    <span class="material-symbols-outlined nav-icon">home</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <span class="nav-text">About</span>
+                    <span class="material-symbols-outlined nav-icon">person</span>
+                </a>
+                <a href="#skills" class="nav-link" data-section="skills">
+                    <span class="nav-text">Skills</span>
+                    <span class="material-symbols-outlined nav-icon">bolt</span>
+                </a>
+                <a href="#projects" class="nav-link" data-section="projects">
+                    <span class="nav-text">Projects</span>
+                    <span class="material-symbols-outlined nav-icon">sports_esports</span>
+                </a>
+                <a href="#experience" class="nav-link" data-section="experience">
+                    <span class="nav-text">Experience</span>
+                    <span class="material-symbols-outlined nav-icon">work</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <span class="nav-text">Contact</span>
+                    <span class="material-symbols-outlined nav-icon">mail</span>
+                </a>
+
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="nav-text">Theme</span>
+                    <span class="material-symbols-outlined theme-icon sun">light_mode</span>
+                    <span class="material-symbols-outlined theme-icon moon">dark_mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Custom Game Cursor -->
+    <div class="cursor-follower" id="cursor"></div>
+
+    <main id="main-content">
+        <!-- FULL Hero Section -->
+        <section id="hero" class="hero-section full-hero">
+            <div class="hero-content">
+                <!-- Floating Badge Top Left -->
+                <div class="floating-badge badge-hello">
+                    <span class="badge-text">👋 Hello, I'm</span>
+                </div>
+
+                <div class="profile-area" id="profile-container">
+                    <div class="profile-glow"></div>
+                    <img src="Assets/pfp.jpg" alt="Omar Abdelaziz" class="profile-img">
+
+                    <!-- Floating Buttons -->
+                    <div class="floating-badge badge-intern">
+                        <span class="badge-icon">💼</span>
+                        <span class="badge-text">Open to Internships</span>
+                    </div>
+                    <div class="floating-badge badge-uni">
+                        <span class="badge-icon">🎓</span>
+                        <div class="badge-text-col">
+                            <strong>Cairo University</strong>
+                            <span>CS Student (2024 - 2028)</span>
+                        </div>
+                    </div>
+                    <div class="floating-badge badge-ps tooltip-trigger">
+                        <span class="badge-icon">🎮</span>
+                        <span class="tooltip">چوكر الكميونيتي</span>
+                    </div>
+                </div>
+
+                <div class="hero-text-area">
+                    <h1>Eng. Omar Abdelaziz Ali</h1>
+                    <p class="tagline">> <span class="typewriter-text"></span><span class="cursor">|</span></p>
+                    <p class="sub-tagline"> <q>Building immersive experiences and high-performance systems with passion
+                            and creativity.</q>
+                    </p>
+
+                    <div class="hero-socials">
+                        <a href="https://github.com/EngOmarAbd-Elaziz" target="_blank" class="social-icon">
+                            <i class="fa fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/omar-abdelaziz-ali-bb3842337/" target="_blank"
+                            class="social-icon"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://flyingfox-x.itch.io/" target="_blank" class="social-icon"><i
+                                class="fa fa-gamepad"></i></a>
+                        <a href="https://linktr.ee/Omar_Abd_Elaziz" target="_blank" class="social-icon"><i
+                                class="fa fa-link"></i></a>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                        <a href="Assets/Omar_Abdelaziz_CV_Formal.pdf" target="_blank" class="btn btn-outline"
+                            download>Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">LEVEL 1 // ABOUT</span>
+                    <h2 class="section-title">Who Am I?</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card main-log reveal">
+                        <div class="card-tag">The Player</div>
+                        <p>I'm a developer who loves mixing creativity with logic—building games that feel alive while
+                            keeping the code clean and solid.
+
+                            I started out curious about how games actually work behind the scenes, and that curiosity
+                            pulled me into game development, gameplay systems, and software engineering. Now I enjoy
+                            creating interactive experiences that are not just fun to use, but also well-structured
+                            under the hood.
+                        </p>
+                    </div>
+                    <div class="about-card lab-hook reveal">
+                        <div class="card-tag">The Philosophy</div>
+                        <p>I don’t just write code—I build experiences.
+
+                            Whether it's a 3D game mechanic, a clean backend system, or a smooth user interface, I treat
+                            every project as a chance to create something meaningful, fun, and technically solid.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section-padding">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">LEVEL 2 // SKILLS</span>
+                    <h2 class="section-title">My Arsenal</h2>
+                </div>
+
+                <!-- Horizontal Animated Carousel (Row 1: Languages) -->
+                <div class="skills-carousel-wrapper reveal">
+                    <div class="skills-carousel-track scroll-left">
+                        <div class="skills-slide">
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                                    alt="C#"> C#</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                                    alt="C++"> C++</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                    alt="Python"> Python</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                    alt="JavaScript"> JavaScript</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                    alt="HTML"> HTML</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                    alt="CSS"> CSS</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+                                    alt="Kotlin"> Kotlin</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                    alt="SQL"> SQL</span>
+                        </div>
+                        <div class="skills-slide">
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                                    alt="C#"> C#</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                                    alt="C++"> C++</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                    alt="Python"> Python</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                    alt="JavaScript"> JavaScript</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                    alt="HTML"> HTML</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                    alt="CSS"> CSS</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+                                    alt="Kotlin"> Kotlin</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                    alt="SQL"> SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horizontal Animated Carousel (Row 2: Tools) -->
+                <div class="skills-carousel-wrapper reveal">
+                    <div class="skills-carousel-track scroll-right">
+                        <div class="skills-slide">
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"
+                                    alt="Unity"> Unity</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
+                                    alt=".NET"> .NET</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                    alt="React"> React.js</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                    alt="Node.js"> Node.js</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                                    alt="Bootstrap"> Bootstrap</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+                                    alt="Django"> Django</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qt/qt-original.svg"
+                                    alt="Qt"> Qt</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
+                                    alt="Photoshop"> Photoshop</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
+                                    alt="Illustrator"> Illustrator</span>
+                            <span class="skill-pill">🎬 Premiere Pro</span>
+                            <span class="skill-pill">🎨 Canva</span>
+                            <span class="skill-pill">✂️ CapCut</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                    alt="Git"> Git & GitHub</span>
+                            <span class="skill-pill">🚀 DOTween</span>
+                            <span class="skill-pill">🎵 JUCE</span>
+                            <span class="skill-pill">🪟 WPF</span>
+                            <span class="skill-pill">🎓 ICDL</span>
+                            <span class="skill-pill">🦈 WireShark</span>
+                        </div>
+                        <div class="skills-slide">
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"
+                                    alt="Unity"> Unity</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
+                                    alt=".NET"> .NET</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                    alt="React"> React.js</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                    alt="Node.js"> Node.js</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                                    alt="Bootstrap"> Bootstrap</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+                                    alt="Django"> Django</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qt/qt-original.svg"
+                                    alt="Qt"> Qt</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
+                                    alt="Photoshop"> Photoshop</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
+                                    alt="Illustrator"> Illustrator</span>
+                            <span class="skill-pill">🎬 Premiere Pro</span>
+                            <span class="skill-pill">🎨 Canva</span>
+                            <span class="skill-pill">✂️ CapCut</span>
+                            <span class="skill-pill"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                    alt="Git"> Git & GitHub</span>
+                            <span class="skill-pill">🚀 DOTween</span>
+                            <span class="skill-pill">🎵 JUCE</span>
+                            <span class="skill-pill">🪟 WPF</span>
+                            <span class="skill-pill">🎓 ICDL</span>
+                            <span class="skill-pill">🦈 WireShark</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">LEVEL 3 // PROJECTS</span>
+                    <h2 class="section-title">Selected Works</h2>
+                </div>
+                <div class="projects-grid">
+
+                    <!-- Kitchen Chaos -->
+                    <div class="project-card reveal">
+                        <div class="project-image-wrapper">
+                            <img src="Assets/kitchenchaos.png" alt="Kitchen Chaos" class="project-img">
+                            <div class="project-overlay">
+                                <a href="https://github.com/EngOmarAbd-Elaziz/UnityCourse" target="_blank"
+                                    class="project-btn"><span class="icon"><i class="fa fa-github"></i></span>Repo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-id">GAME // 3D</span>
+                            <h3>Kitchen Chaos</h3>
+                            <p>A fast-paced 3D multiplayer game prototype built in Unity. Focuses heavily on robust
+                                physics-based interactions, smooth character controllers, and responsive gameplay
+                                systems.</p>
+                            <div class="tech-stack"><span>Unity</span><span>C#</span></div>
+                        </div>
+                    </div>
+
+                    <!-- TicTacToeCastle -->
+                    <div class="project-card reveal">
+                        <div class="project-image-wrapper">
+                            <img src="Assets/tictactoe.png" alt="TicTacToeCastle" class="project-img">
+                            <div class="project-overlay">
+                                <a href="https://flyingfox-x.itch.io/tictactoe-castle" target="_blank"
+                                    class="project-btn"><span class="icon"><i class="fa fa-gamepad"></i></span>Play</a>
+                                <a href="https://github.com/EngOmarAbd-Elaziz/TicTacToeCastle" target="_blank"
+                                    class="project-btn"><span class="icon"><i class="fa fa-github"></i></span>Repo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-id">GAME // 2D DESKTOP</span>
+                            <h3>TicTacToeCastle</h3>
+                            <p>A strategic twist on the classic Tic-Tac-Toe. Built from scratch using C++ and the Qt
+                                framework, featuring custom UI logic and a polished interface.</p>
+                            <div class="tech-stack"><span>C++</span><span>Qt Framework</span></div>
+                        </div>
+                    </div>
+
+                    <!-- XOWeb -->
+                    <div class="project-card reveal">
+                        <div class="project-image-wrapper">
+                            <img src="Assets/xoWeb1.png" alt="XOWeb" class="project-img">
+                            <div class="project-overlay">
+                                <a href="https://engomarabd-elaziz.github.io/XOWeb/" target="_blank"
+                                    class="project-btn"><span class="icon"><span class="icon">🌐</span></span>Live</a>
+                                <a href="https://github.com/EngOmarAbd-Elaziz/XOWeb" target="_blank"
+                                    class="project-btn"><span class="icon"><i class="fa fa-github"></i></span>Repo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-id">WEB // GAME</span>
+                            <h3>XOWeb</h3>
+                            <p>An interactive, beautifully designed web-based Tic-Tac-Toe experience. Demonstrates clean
+                                DOM manipulation, responsive styling, and core frontend logic.</p>
+                            <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                        </div>
+                    </div>
+
+                    <!-- The Prince's Rebellion -->
+                    <div class="project-card reveal">
+                        <div class="project-image-wrapper">
+                            <img src="Assets/prince.jpeg" alt="The Prince's Rebellion" class="project-img">
+                            <div class="project-overlay">
+                                <a href="https://github.com/EngOmarAbd-Elaziz/The-Prince-s-Rebillion" target="_blank"
+                                    class="project-btn"><i class="fa fa-github"></i> Repo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-id">GAME // CONSOLE</span>
+                            <h3>The Prince's Rebellion</h3>
+                            <p>A narrative-driven, text-based RPG console game showcasing strong object-oriented
+                                programming principles, state management, and algorithmic design.</p>
+                            <div class="tech-stack"><span>C#</span><span>Python</span><span>OOP</span></div>
+                        </div>
+                    </div>
+
+                    <!-- MASROOFY -->
+                    <div class="project-card reveal">
+                        <div class="project-image-wrapper">
+                            <img src="Assets/masroofy.png" alt="MASROOFY" class="project-img">
+                            <div class="project-overlay">
+                                <a href="https://github.com/EngOmarAbd-Elaziz/MASROOFY" target="_blank"
+                                    class="project-btn"><i class="fa fa-github"></i> Repo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-id">APP // DESKTOP</span>
+                            <h3>MASROOFY</h3>
+                            <p>A comprehensive desktop application designed for efficient income and expense tracking.
+                                Built with a robust .NET backend and a clean user interface connected to a relational
+                                database.</p>
+                            <div class="tech-stack"><span>C#</span><span>WPF</span><span>.NET</span><span>SQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section section-padding">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">LEVEL 4 // TIMELINE</span>
+                    <h2 class="section-title">Experience</h2>
+                </div>
+
+                <div class="experience-timeline">
+                    <!-- FCAI-CU Vice Head -->
+                    <div class="mission-card reveal">
+                        <div class="mission-org-logo">👑</div>
+                        <div class="mission-content">
+                            <h3>Community Vice Head</h3>
+                            <p class="mission-org">FCAI-CU Game Development Club</p>
+                            <span class="mission-date">2024 – Present</span>
+                            <ul class="mission-list">
+                                <li>Directing the club's overall strategy and ensuring the successful execution of all
+                                    workshops and events.</li>
+                                <li>Mentoring team members and building a collaborative culture within the game
+                                    development community.</li>
+                            </ul>
+                            <div class="tech-stack"><span>Leadership</span><span>Strategy</span><span>Mentorship</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FCAI-CU Instructor -->
+                    <div class="mission-card reveal">
+                        <div class="mission-org-logo">🎮</div>
+                        <div class="mission-content">
+                            <h3>Course Instructor & Unity Developer</h3>
+                            <p class="mission-org">FCAI-CU Game Development Club</p>
+                            <span class="mission-date">Sep 2024 – Present</span>
+                            <ul class="mission-list">
+                                <li>Teaching core game development workflows, architecture, and programming fundamentals
+                                    to dozens of aspiring developers.</li>
+                                <li>Leading hands-on coding sessions and providing code reviews to accelerate student
+                                    learning.</li>
+                            </ul>
+                            <div class="tech-stack"><span>Unity</span><span>C#</span><span>Education</span></div>
+                        </div>
+                    </div>
+
+                    <!-- DSC Cairo University -->
+                    <div class="mission-card reveal">
+                        <div class="mission-org-logo">🚀</div>
+                        <div class="mission-content">
+                            <h3>Non-Technical Lead</h3>
+                            <p class="mission-org">Google Developer Student Clubs (DSC) - Cairo University</p>
+                            <span class="mission-date">Sep 2025 – Feb 2026</span>
+                            <ul class="mission-list">
+                                <li>Managed operations and non-technical teams to organize massive student events and
+                                    tech workshops.</li>
+                                <li>Facilitated cross-team communication and ensured smooth project delivery.</li>
+                            </ul>
+                            <div class="tech-stack"><span>Management</span><span>Event Planning</span></div>
+                        </div>
+                    </div>
+
+                    <!-- ITI -->
+                    <div class="mission-card reveal">
+                        <div class="mission-org-logo">💻</div>
+                        <div class="mission-content">
+                            <h3>Trainee</h3>
+                            <p class="mission-org">Information Technology Institute (ITI)</p>
+                            <span class="mission-date">Jul 2025 – Jan 2026</span>
+                            <ul class="mission-list">
+                                <li>Participated in intensive software engineering training focused on modern tech
+                                    stacks.</li>
+                                <li>Developed full-stack applications and collaborated with peers on final capstone
+                                    projects.</li>
+                            </ul>
+                            <div class="tech-stack"><span>Software Engineering</span><span>Full-Stack</span></div>
+                        </div>
+                    </div>
+
+                    <!-- NASBEE -->
+                    <div class="mission-card reveal">
+                        <div class="mission-org-logo">📢</div>
+                        <div class="mission-content">
+                            <h3>Marketing Team Member</h3>
+                            <p class="mission-org">NASBEE in Egypt</p>
+                            <span class="mission-date">Sep 2024 – Oct 2025</span>
+                            <ul class="mission-list">
+                                <li>Contributed to digital marketing campaigns and content creation.</li>
+                                <li>Analyzed engagement metrics to optimize social media outreach.</li>
+                            </ul>
+                            <div class="tech-stack"><span>Marketing</span><span>Content Creation</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership & Community Section -->
+        <section id="community" class="community-section section-padding">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">LEVEL 5 // IMPACT</span>
+                    <h2 class="section-title">Leadership & Community</h2>
+                </div>
+                <div class="community-grid">
+                    <div class="community-card reveal">
+                        <div class="comm-icon">🌟</div>
+                        <h3>Building Developers</h3>
+                        <p>My involvement with the <strong>FCAI-CU Game Development Club</strong> isn't just about
+                            writing code; it's about fostering a culture of continuous learning. As a Vice Head and
+                            Instructor, I've had the privilege of guiding the next generation of creative developers,
+                            helping them transform their ideas into playable experiences.</p>
+                    </div>
+                    <div class="community-card reveal">
+                        <div class="comm-icon">🤝</div>
+                        <h3>Driving Engagement</h3>
+                        <p>In my role at <strong>DSC Cairo University</strong>, I learned the critical importance of
+                            non-technical skills. Organizing large-scale tech events taught me how to communicate
+                            effectively, manage diverse teams, and bridge the gap between complex technology and
+                            engaging community experiences.</p>
+                    </div>
+                </div>
+                <!-- Buttons for the entire section -->
+                <div class="community-actions reveal">
+                    <a href="https://www.linkedin.com/company/fcai-cu-game-development-club/posts/?feedView=all"
+                        target="_blank" class="btn btn-primary">LinkedIn Community</a>
+                    <a href="https://linktr.ee/fcai_gd" target="_blank" class="btn btn-outline">Linktree</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- LinkedIn Posts Section (3D Playing Cards) -->
+        <section id="linkedin" class="linkedin-section section-padding">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">LEVEL 6 // NETWORK</span>
+                    <h2 class="section-title">Latest Updates</h2>
+                </div>
+
+                <div class="cards-3d-container reveal">
+                    <a href="https://www.linkedin.com/posts/omar-abdelaziz-ali-bb3842337_unity-essentials-badge-certificate-ugcPost-7457131029406023680-Q2dX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFSp6DcBAZN9CMyDZ2AiNdnEXUymPjweB0E"
+                        target="_blank" class="card-3d">
+                        <div class="card-inner">
+                            <div class="card-header">
+                                <img src="Assets/pfp.jpg" alt="Omar" class="card-avatar">
+                                <div>
+                                    <h4>Omar Abdelaziz Ali</h4>
+                                    <span>Software Engineer | Game Developer (Unity & C#)</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p>We finally did it 😤 first Unity badge unlocked — Unity Essentials
+                                    Even though I had some new projects and stuff going on, I was already familiar with
+                                    a lot of the concepts from earlier learning.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span>❤️ 142</span>
+                                <span>💬 24</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/posts/omar-abdelaziz-ali-bb3842337_tictactoe-castle-my-first-pc-game-is-activity-7404394877570138112-g7QE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFSp6DcBAZN9CMyDZ2AiNdnEXUymPjweB0E"
+                        target="_blank" class="card-3d">
+                        <div class="card-inner">
+                            <div class="card-header">
+                                <img src="Assets/pfp.jpg" alt="Omar" class="card-avatar">
+                                <div>
+                                    <h4>Omar Abdelaziz Ali</h4>
+                                    <span>Software Engineer | Game Developer (Unity & C#)</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p>✨ TicTacToe Castle – My FIRST PC Game Is Live!
+
+                                    I’m super excited to introduce TicTacToe Castle, a full mini-game platform built
+                                    around the classic TicTacToe experience — but reinvented✌️</p>
+                            </div>
+                            <div class="card-footer">
+                                <span>❤️ 210</span>
+                                <span>💬 38</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/posts/omar-abdelaziz-ali-bb3842337_masroofy-presentation-activity-7456720499230842880-oScj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFSp6DcBAZN9CMyDZ2AiNdnEXUymPjweB0E"
+                        target="_blank" class="card-3d">
+                        <div class="card-inner">
+                            <div class="card-header">
+                                <img src="Assets/pfp.jpg" alt="Omar" class="card-avatar">
+                                <div>
+                                    <h4>Omar Abdelaziz Ali</h4>
+                                    <span>Software Engineer | Game Developer (Unity & C#)</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p>I built Masroofy — an offline micro budgeting system for students and young adults.
+
+                                    المشروع بدأ كـ assignment بسيط في الكلية، مجرد فكرة لتنفيذ المطلوب وتسليمه وخلاص.
+                                    لكن وانا شغال عليه حسيت ان فيه مساحة اكبر من كده بكتير.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span>❤️ 185</span>
+                                <span>💬 34</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">FINAL LEVEL // CONTACT</span>
+                    <h2 class="section-title">Start a Co-op Campaign?</h2>
+                </div>
+                <div class="contact-grid">
+                    <a href="mailto:omarrab713@gmail.com" class="contact-card reveal">
+                        <i class="contact-icon fa fa-envelope" style="font-size: 2.5rem;"></i>
+                        <div class="contact-info">
+                            <h4>Email Me</h4>
+                            <p>Contact with me directly</p>
+                        </div>
+                    </a>
+                    <a href="https://linkedin.com/in/omar-abdelaziz-ali-bb3842337/" target="_blank"
+                        class="contact-card reveal">
+                        <i class="contact-icon fa fa-linkedin" style="font-size: 2.5rem;"></i>
+                        <div class="contact-info">
+                            <h4>LinkedIn</h4>
+                            <p>Connect professionally</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/EngOmarAbd-Elaziz" target="_blank" class="contact-card reveal">
+                        <i class="contact-icon fa fa-github" style="font-size: 2.5rem;"></i>
+                        <div class="contact-info">
+                            <h4>GitHub</h4>
+                            <p>Check out my repos</p>
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/omer.rabeh.5" target="_blank" class="contact-card reveal">
+                        <i class="contact-icon fa fa-facebook" style="font-size: 2.5rem;"></i>
+                        <div class="contact-info">
+                            <h4>Facebook</h4>
+                            <p>Follow my updates</p>
+                        </div>
+                    </a>
+                </div>
+                <div style="align-self: center; text-align: center; margin-top: 3rem;">
+                    <p><q> فى اى مكان انا موجود ، دور عليا
+                            وهتلاقيني فى ثوانى.</q></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="lab-footer">
+        <div class="container">
+            <p class="arabic-quote">“بفك الحاجات عشان أفهمها… وبعدين أبنيها أحسن من الأول.”</p>
+            <p>&copy; 2026 Omar Abdelaziz Ali | Built with Passion & Code</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script src="js/background-system.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/scroll-system.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/main.js"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Omar Abdelaziz",
+            "url": "https://www.yourdomain.com",
+            "jobTitle": "Game Developer & Software Engineer",
+            "sameAs": [
+                "https://github.com/EngOmarAbd-Elaziz",
+                "https://www.linkedin.com/in/omar-abdelaziz-ali-bb3842337/",
+                "https://flyingfox-x.itch.io/",
+                "https://linktr.ee/Omar_Abd_Elaziz",
+                "https://www.facebook.com/omer.rabeh.5"
+            ]
+        }
+    </script>
+</body>
+
+</html>

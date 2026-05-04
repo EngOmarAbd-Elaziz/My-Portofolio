@@ -1,0 +1,19 @@
+.lab-footer {
+    padding: 4rem 0;
+    text-align: center;
+    border-top: 1px solid var(--surface-border);
+    margin-top: 5rem;
+}
+
+.arabic-quote {
+    font-size: 1.5rem;
+    color: var(--highlight);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.lab-footer p:not(.arabic-quote) {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}

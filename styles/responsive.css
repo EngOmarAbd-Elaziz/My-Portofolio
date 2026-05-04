@@ -1,0 +1,60 @@
+/* Global Responsive Adjustments */
+
+@media (max-width: 992px) {
+    /* Adjust grid layouts for tablets */
+    .about-grid, .skills-grid, .projects-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-grid { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust typography and spacing for mobile */
+    .section-title { font-size: 2.2rem; }
+    .section-padding { padding: 60px 0; }
+    
+    /* Intro adjustments */
+    .controller-wrapper { transform: scale(0.8) translateY(-150vh); }
+    
+    /* Stack CTA buttons */
+    .hero-cta { flex-direction: column; width: 100%; }
+    .hero-cta .btn { text-align: center; width: 100%; }
+    
+    .contact-card { padding: 1.5rem; }
+
+    /* Experience Timeline Mobile Fix */
+    .experience-timeline {
+        padding-left: 2rem;
+    }
+    .experience-timeline::before {
+        left: 0.5rem;
+    }
+    .mission-org-logo {
+        left: -2.3rem; /* Adjusted for narrower padding */
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        top: 2rem;
+    }
+    .mission-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Small mobile tweaks */
+    .section-title { font-size: 1.8rem; }
+    .controller-wrapper { transform: scale(0.6) translateY(-150vh); }
+    
+    /* Ensure project cards fit screen */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-card {
+        margin: 0 -1rem; /* Full bleed on tiny screens */
+        border-radius: 0;
+    }
+}
