@@ -37,7 +37,7 @@ function initTypewriter() {
     const textElement = document.querySelector('.typewriter-text');
     if (!textElement) return;
     
-    const words = ["Game Developer", "Software Engineer"];
+    const words = ["Game Developer", "Software Engineer", "Web Developer", "Content Creator", "Golden Gamer",];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
