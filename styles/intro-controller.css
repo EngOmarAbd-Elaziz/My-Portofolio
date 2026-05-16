@@ -181,3 +181,22 @@
         opacity: 0;
     }
 }
+
+@media (max-width: 768px) {
+    .controller-wrapper {
+        transform: translateY(-150vh);
+        /* Scale handled in child now */
+    }
+
+    .controller {
+        transform: scale(0.8);
+    }
+
+    .controller-wrapper:hover .controller {
+        transform: scale(0.8);
+    }
+
+    .ripple-container {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+}

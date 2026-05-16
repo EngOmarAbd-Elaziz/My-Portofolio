@@ -30,7 +30,7 @@ function initController() {
             }
             
             // Trigger Hero Animation
-            const heroPanel = document.querySelector('.hero-content');
+            const heroPanel = document.querySelector('.hero-section');
             if (heroPanel) {
                 setTimeout(() => heroPanel.classList.add('active'), 500);
             }

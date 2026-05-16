@@ -34,13 +34,20 @@
 }
 
 .nav-logo {
-    font-family: var(--font-heading);
-    font-weight: 700;
+    font-family: 'Satisfy', cursive;
+    font-weight: 400;
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
     white-space: nowrap;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+.nav-logo:active {
+    transform: rotate(-2deg) scale(1.05);
+    color: var(--highlight);
 }
 
 .nav-links {
@@ -105,12 +112,14 @@
     position: relative;
     height: 30px;
     width: 30px;
-    overflow: visible; /* Changed to visible for tooltips */
+    overflow: visible;
+    /* Changed to visible for tooltips */
     flex-shrink: 0;
 }
 
 .theme-btn .nav-text {
-    display: none; /* Hidden by default in horizontal mode */
+    display: none;
+    /* Hidden by default in horizontal mode */
 }
 
 .theme-btn:hover {
@@ -182,11 +191,13 @@ body.theme-light .theme-icon.moon {
         gap: 1.5rem;
     }
 
-    .navbar.vertical-mode-content .nav-logo { display: none; }
-    
+    .navbar.vertical-mode-content .nav-logo {
+        display: none;
+    }
+
     /* Turn nav-text into Tooltips */
-    .navbar.vertical-mode-content .nav-text { 
-        display: block; 
+    .navbar.vertical-mode-content .nav-text {
+        display: block;
         position: absolute;
         right: calc(100% + 15px);
         top: 50%;
@@ -206,7 +217,7 @@ body.theme-light .theme-icon.moon {
         transition: all 0.3s ease;
         box-shadow: var(--shadow-hover);
     }
-    
+
     /* Show tooltip on hover */
     .navbar.vertical-mode-content .nav-link:hover .nav-text,
     .navbar.vertical-mode-content .theme-btn:hover .nav-text {
@@ -214,7 +225,9 @@ body.theme-light .theme-icon.moon {
         transform: translateY(-50%) translateX(0);
     }
 
-    .navbar.vertical-mode-content .nav-icon { display: block; }
+    .navbar.vertical-mode-content .nav-icon {
+        display: block;
+    }
 
     .navbar.vertical-mode-content .nav-link {
         padding: 0.5rem;
@@ -288,7 +301,7 @@ body.theme-light .theme-icon.moon {
 
         100% {
             /* 4. Expands to vertical sidebar */
-            top: 50%;
+            top: 45%;
             left: calc(100% - 20px);
             transform: translate(-100%, -50%);
             width: 70px;
@@ -359,14 +372,45 @@ body.theme-light .theme-icon.moon {
 /* Mobile Responsive */
 @media (max-width: 992px) {
     .navbar {
+        width: 60px;
+        height: 60px;
+        left: auto;
+        right: 20px;
+        transform: none;
+        border-radius: 30px;
+        padding: 0;
+        justify-content: center;
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 2000;
+        background: var(--surface-glass-heavy);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid var(--surface-border);
+    }
+
+    .navbar.nav-open {
         width: calc(100% - 40px);
-        min-width: auto;
-        justify-content: space-between;
+        height: 70px;
+        border-radius: 35px;
         padding: 0 2rem;
-        transition: transform 0.6s ease, opacity 0.6s ease;
+        justify-content: space-between;
+    }
+
+    .nav-logo {
+        display: none;
+    }
+
+    .navbar.nav-open .nav-logo {
+        display: block;
     }
 
     .nav-container {
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .navbar.nav-open .nav-container {
         justify-content: space-between;
     }
 

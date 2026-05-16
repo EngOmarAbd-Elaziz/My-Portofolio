@@ -195,7 +195,8 @@
     border-color: var(--primary) transparent transparent transparent;
 }
 
-.tooltip-trigger:hover .tooltip {
+.tooltip-trigger:hover .tooltip,
+.tooltip-trigger.active-tooltip .tooltip {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
@@ -325,11 +326,17 @@
     }
 
     .badge-intern {
-        left: -10%;
+        left: -40%;
     }
 
     .badge-uni {
-        right: -10%;
+        right: -15%;
+        bottom: -10%;
+    }
+
+    .badge-hello {
+        top: -3%;
+        left: 23%;
     }
 }
 
@@ -345,8 +352,30 @@
     }
 
     .floating-badge {
-        display: none;
+        display: flex;
+        transform: scale(0.7) !important;
     }
 
-    /* Hide floating badges on very small screens to avoid clutter */
+    .badge-hello {
+        top: -3%;
+        left: 23%;
+    }
+
+    .badge-intern {
+        top: 40%;
+        left: -40%;
+    }
+
+    .badge-uni {
+        bottom: -15%;
+        right: -15%;
+    }
+
+    .badge-ps {
+        top: -90%;
+        right: -80%;
+        width: 60px;
+        height: 60px;
+        font-size: 3rem;
+    }
 }

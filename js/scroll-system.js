@@ -13,41 +13,35 @@ function initScrollSystem() {
 
         // Cinematic Navbar Logic (Desktop only)
         if (window.innerWidth > 992 && navbar && !navbar.classList.contains('hidden-nav')) {
-            if (scroll > 150 && !isNavVertical && !isNavAnimating) {
-                isNavVertical = true;
+            const shouldBeVertical = scroll > 150;
+            if (shouldBeVertical !== isNavVertical && !isNavAnimating) {
                 isNavAnimating = true;
+                isNavVertical = shouldBeVertical;
                 
-                // Fade out horizontal content
-                if(navContainer) navContainer.style.opacity = '0';
+                if (navContainer) navContainer.style.opacity = '0';
                 
                 setTimeout(() => {
-                    navbar.classList.remove('animate-up');
-                    navbar.classList.add('animate-down');
-                    navbar.classList.add('vertical-mode-content');
+                    if (shouldBeVertical) {
+                        navbar.classList.remove('animate-up');
+                        navbar.classList.add('animate-down');
+                        navbar.classList.add('vertical-mode-content');
+                    } else {
+                        navbar.classList.remove('animate-down');
+                        navbar.classList.add('animate-up');
+                    }
                     
-                    // Fade in the vertical content exactly when expansion finishes
                     setTimeout(() => {
-                        if(navContainer) navContainer.style.opacity = '1';
+                        if (!shouldBeVertical) {
+                            navbar.classList.remove('vertical-mode-content');
+                        }
+                        if (navContainer) navContainer.style.opacity = '1';
                         isNavAnimating = false;
-                    }, 2000); // 2s matches CSS animation
-                }, 300); // short delay to fade out text first
-
-            } else if (scroll <= 150 && isNavVertical && !isNavAnimating) {
-                isNavVertical = false;
-                isNavAnimating = true;
-                
-                // Fade out vertical content
-                if(navContainer) navContainer.style.opacity = '0';
-                
-                setTimeout(() => {
-                    navbar.classList.remove('animate-down');
-                    navbar.classList.add('animate-up');
-                    
-                    // Restore horizontal layout when returning to center
-                    setTimeout(() => {
-                        navbar.classList.remove('vertical-mode-content');
-                        if(navContainer) navContainer.style.opacity = '1';
-                        isNavAnimating = false;
+                        
+                        // Check if state changed during animation
+                        const currentShouldBeVertical = window.scrollY > 150;
+                        if (currentShouldBeVertical !== isNavVertical) {
+                            window.dispatchEvent(new Event('scroll'));
+                        }
                     }, 2000); 
                 }, 300);
             }

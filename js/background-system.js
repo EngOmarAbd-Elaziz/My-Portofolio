@@ -134,11 +134,8 @@ function initBackgroundSystem() {
     }
 
     function animate() {
-        const isLight = document.body.classList.contains('theme-light');
-        
-        // Create trailing effect by filling with slight opacity
-        ctx.fillStyle = isLight ? 'rgba(248, 250, 252, 0.3)' : 'rgba(11, 17, 32, 0.3)'; // Match background
-        ctx.fillRect(0, 0, width, height);
+        // Clear canvas completely to prevent alpha blending color bug and allow CSS background to show
+        ctx.clearRect(0, 0, width, height);
         
         // Parallax Offset Application (Subtle for entire background if needed)
         offset.x += (offset.targetX - offset.x) * 0.05;
@@ -173,8 +170,41 @@ function initBackgroundSystem() {
         if (cursor) {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
+
+            // Hide cursor when over the scrollbar or outside viewport
+            if (e.clientX >= document.documentElement.clientWidth - 2 || e.clientY >= document.documentElement.clientHeight - 2 || e.clientX <= 2 || e.clientY <= 2) {
+                cursor.style.opacity = '0';
+            } else {
+                cursor.style.opacity = '1';
+            }
         }
     });
+
+    // Touch interaction for background particles
+    document.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        }
+    }, {passive: true});
+    document.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 0) {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+            mouse.pressed = true;
+        }
+    }, {passive: true});
+    document.addEventListener('touchend', () => {
+        mouse.pressed = false;
+        mouse.x = -1000;
+        mouse.y = -1000;
+    });
+
+    // Disable custom cursor on mobile devices
+    if (window.innerWidth <= 768 || ('ontouchstart' in window)) {
+        const cursor = document.getElementById('cursor');
+        if (cursor) cursor.style.display = 'none';
+    }
 
     // Make cursor slightly larger when interacting with clickable elements
     const clickables = document.querySelectorAll('a, button, .project-card, .contact-card, .nav-link');
