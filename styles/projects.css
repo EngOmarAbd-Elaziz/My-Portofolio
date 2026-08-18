@@ -280,6 +280,7 @@
     .projects-actions {
         flex-direction: column;
     }
+
     .projects-actions .btn {
         width: 100%;
         text-align: center;
