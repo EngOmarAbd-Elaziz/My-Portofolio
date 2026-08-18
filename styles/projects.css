@@ -268,3 +268,20 @@
     font-size: 0.9rem;
     color: var(--text-secondary);
 }
+
+.projects-actions {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .projects-actions {
+        flex-direction: column;
+    }
+    .projects-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
