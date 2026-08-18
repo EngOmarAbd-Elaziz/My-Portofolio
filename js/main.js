@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    initBackgroundSystem();
-    initThemeToggle();
-    initScrollSystem();
-    initAnimations();
-    initController();
-    initMobileMenu();
-    initTypewriter();
-    initTooltipTap();
+    if (typeof initBackgroundSystem === 'function') initBackgroundSystem();
+    if (typeof initThemeToggle === 'function') initThemeToggle();
+    if (typeof initScrollSystem === 'function') initScrollSystem();
+    if (typeof initAnimations === 'function') initAnimations();
+    if (typeof initController === 'function') initController();
+    if (typeof initMobileMenu === 'function') initMobileMenu();
+    if (typeof initTypewriter === 'function') initTypewriter();
+    if (typeof initTooltipTap === 'function') initTooltipTap();
     
     // Make sure elements fade in properly on scroll
     setTimeout(() => {
