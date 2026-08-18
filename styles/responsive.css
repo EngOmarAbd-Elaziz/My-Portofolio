@@ -1,59 +1,161 @@
-/* Global Responsive Adjustments */
+/* ============================================
+   RESPONSIVE — Mobile-First Comprehensive Fix
+   ============================================ */
 
+/* ── Tablet (≤ 992px) ── */
 @media (max-width: 992px) {
-    /* Adjust grid layouts for tablets */
-    .about-grid, .skills-grid, .projects-list {
-        grid-template-columns: 1fr;
+    .container { width: 92%; }
+
+    /* Grid resets */
+    .about-grid,
+    .skills-grid,
+    .projects-list { grid-template-columns: 1fr; }
+
+    .contact-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Projects grid — 2 cols on tablet */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
-    
-    .contact-grid { 
-        grid-template-columns: 1fr; 
+
+    /* Creative grid — 2 cols on tablet */
+    .creative-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
+
+    /* About grid */
+    .about-grid { gap: 1.5rem; }
+
+    /* Community */
+    .community-grid { grid-template-columns: 1fr; }
+
+    /* Section header */
+    .section-header { margin-bottom: 2.5rem; }
 }
 
+/* ── Mobile (≤ 768px) ── */
 @media (max-width: 768px) {
-    /* Adjust typography and spacing for mobile */
-    .section-title { font-size: 2.2rem; }
+    /* Typography */
+    .section-title   { font-size: 2rem; letter-spacing: -0.5px; }
+    .section-subtitle { font-size: 0.75rem; }
     .section-padding { padding: 60px 0; }
-    
-    /* Intro adjustments */
-    /* Controller scale is handled in intro-controller.css */
-    
-    /* Stack CTA buttons */
-    .hero-cta { flex-direction: column; width: 100%; }
-    .hero-cta .btn { text-align: center; width: 100%; }
-    
-    .contact-card { padding: 1.5rem; }
+    .section-header  { margin-bottom: 2rem; }
 
-    /* Experience Timeline Mobile Fix */
-    .experience-timeline {
-        padding-left: 2rem;
+    /* Container */
+    .container { width: 94%; }
+
+    /* Hero CTA buttons */
+    .hero-cta { flex-direction: column; width: 100%; gap: 0.8rem; }
+    .hero-cta .btn { text-align: center; width: 100%; }
+
+    /* Contact cards */
+    .contact-card { padding: 1.5rem; gap: 1rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+
+    /* Project cards — single column */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
-    .experience-timeline::before {
-        left: 0.5rem;
+
+    /* Project image height */
+    .project-image-wrapper { height: 200px; }
+
+    /* Project content padding */
+    .project-content { padding: 1.5rem; }
+    .project-content h3 { font-size: 1.4rem; }
+
+    /* Creative grid — 2 cols on mobile */
+    .creative-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
     }
+    /* Show overlay always on mobile (no hover) */
+    .creative-overlay {
+        opacity: 1 !important;
+        background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.1) 55%, transparent 100%);
+    }
+    .creative-overlay h3  { transform: translateY(0) !important; font-size: 1rem; }
+    .creative-overlay p   { transform: translateY(0) !important; }
+
+    /* About cards */
+    .about-card { padding: 2rem; }
+
+    /* Skills carousel pill size */
+    .skill-pill { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
+
+    /* Experience Timeline */
+    .experience-timeline { padding-left: 2rem; }
+    .experience-timeline::before { left: 0.5rem; }
     .mission-org-logo {
-        left: -2.3rem; /* Adjusted for narrower padding */
+        left: -2.3rem;
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
         top: 2rem;
     }
-    .mission-card {
-        padding: 1.5rem;
+    .mission-card { padding: 1.5rem; }
+
+    /* Community */
+    .community-card { padding: 2rem; }
+    .community-actions {
+        flex-direction: column;
+        align-items: stretch;
     }
+    .community-actions .btn { width: 100%; text-align: center; }
+
+    /* Projects actions */
+    .projects-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .projects-actions .btn { width: 100%; text-align: center; }
+
+    /* LinkedIn cards */
+    .cards-3d-container { gap: 1.5rem; }
+
+    /* Back-to-top */
+    .back-to-top { bottom: 20px; right: 15px; width: 44px; height: 44px; font-size: 1.2rem; }
 }
 
+/* ── Small Mobile (≤ 480px) ── */
 @media (max-width: 480px) {
-    /* Small mobile tweaks */
-    .section-title { font-size: 1.8rem; }
-    
-    /* Ensure project cards fit screen */
+    /* Typography */
+    .section-title  { font-size: 1.7rem; }
+    .section-padding { padding: 48px 0; }
+
+    /* Container */
+    .container { width: 96%; }
+
+    /* Projects — full-bleed cards */
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     .project-card {
-        margin: 0 -1rem; /* Full bleed on tiny screens */
-        border-radius: 0;
+        border-radius: var(--radius-md);
     }
+    .project-image-wrapper { height: 180px; }
+    .project-content { padding: 1.2rem; }
+    .project-content h3 { font-size: 1.25rem; }
+
+    /* Creative — single column on very small screens */
+    .creative-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    /* Tech stack tags */
+    .tech-stack span { font-size: 0.7rem; padding: 0.25rem 0.6rem; }
+
+    /* Buttons */
+    .btn { padding: 0.7rem 1.5rem; font-size: 0.85rem; }
+
+    /* Contact grid */
+    .contact-grid { grid-template-columns: 1fr; }
+
+    /* Mission card */
+    .mission-card { padding: 1.2rem 1rem; }
 }
