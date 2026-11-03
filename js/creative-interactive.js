@@ -181,11 +181,25 @@
             });
         });
 
+        // Move lightbox to document.body if not already a direct child.
+        // This escapes any stacking context created by ancestor elements
+        // (e.g. creative-portfolio-page with position:relative + z-index)
+        // so the lightbox appears above the navbar regardless of page structure.
+        if (lightbox.parentElement !== document.body) {
+            document.body.appendChild(lightbox);
+        }
+
         // Open Lightbox
         function openLightbox(index) {
             if (index < 0 || index >= playlist.length) index = 0;
             activeIndex = index;
             renderMedia();
+
+            // Ensure lightbox is a direct child of body each time (resilient)
+            if (lightbox.parentElement !== document.body) {
+                document.body.appendChild(lightbox);
+            }
+
             lightbox.classList.add('active');
             lightbox.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';

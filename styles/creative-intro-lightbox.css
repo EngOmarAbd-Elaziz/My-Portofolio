@@ -217,7 +217,10 @@
 .creative-lightbox {
     position: fixed;
     inset: 0;
-    z-index: 99999999;
+    /* Must be above navbar (z-index: 2000 on mobile) and intro overlay (20000).
+       Appending to body.js fixes the stacking context; this z-index is a second
+       line of defence for browsers that handle stacking differently. */
+    z-index: 2147483640;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -226,6 +229,7 @@
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.35s ease, visibility 0.35s ease;
+    isolation: isolate;
 }
 
 .creative-lightbox.active {
