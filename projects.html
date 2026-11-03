@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;500;700&family=Satisfy&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700;900&family=Inter:wght@400;500;700&family=Satisfy&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
         rel="stylesheet" />
@@ -55,6 +55,7 @@
     <link rel="stylesheet" href="styles/linkedin-feed.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/creative-portfolio.css">
 </head>
 
 <body class="theme-dark">
@@ -73,10 +74,24 @@
             </div>
 
             <div class="nav-links" id="nav-links">
-                <a href="index.html" class="nav-link" data-section="hero">
+                <a href="index.html" class="nav-link" data-section="home" title="Return to Main Homepage">
                     <span class="nav-text">Home</span>
                     <span class="material-symbols-outlined nav-icon">home</span>
                 </a>
+                <a href="#programmer-projects" class="nav-link active" data-section="programmer-projects">
+                    <span class="nav-text">Coding</span>
+                    <span class="material-symbols-outlined nav-icon">terminal</span>
+                </a>
+                <a href="#creative-projects" class="nav-link" data-section="creative-projects">
+                    <span class="nav-text">Creative</span>
+                    <span class="material-symbols-outlined nav-icon">palette</span>
+                </a>
+                <a href="creative-portfolio.html" class="nav-link" data-section="full-creative"
+                    title="Open Complete Graphic Design Showcase">
+                    <span class="nav-text">Portfolio ↗</span>
+                    <span class="material-symbols-outlined nav-icon">auto_awesome</span>
+                </a>
+
 
                 <button id="theme-toggle" class="theme-btn">
                     <span class="nav-text">Theme</span>
@@ -180,47 +195,94 @@
                     <span class="section-subtitle">GRAPHIC DESIGN & VIDEO EDITING</span>
                     <h2 class="section-title">Creative Work</h2>
                 </div>
+
+                <!-- Featured Creative Portfolio Card -->
+                <div class="creative-featured-banner reveal">
+                    <div class="featured-banner-content">
+                        <div class="featured-badge">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            FEATURED SHOWCASE
+                        </div>
+                        <h3 class="featured-banner-title">Explore My Creative Portfolio</h3>
+                        <p class="featured-banner-desc">Explore my graphic design journey, visual identities, creative
+                            projects, and selected works.</p>
+                        <div class="featured-banner-actions">
+                            <a href="creative-portfolio.html" class="btn btn-primary featured-btn">
+                                <span>Explore Portfolio</span>
+                                <span class="material-symbols-outlined arrow-icon">north_east</span>
+                            </a>
+                            <a href="Assets/Creative%20Work/Creative%20Portfolio/Creative%20Portfolio.pdf"
+                                download="Omar_Abdelaziz_Creative_Portfolio.pdf" class="btn btn-outline">
+                                <i class="fa fa-download" style="margin-right: 8px;"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
+                    <a href="creative-portfolio.html" class="featured-banner-preview"
+                        aria-label="Open Creative Portfolio">
+                        <img src="Assets/Creative Work/Creative Portfolio/1.png" alt="Creative Portfolio Preview"
+                            class="featured-preview-img" loading="lazy">
+                        <div class="featured-preview-overlay">
+                            <span class="preview-tag">Dedicated Page ↗</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Existing 5 Creative Project Templates -->
                 <div class="creative-grid">
                     <!-- Creative Item 1 — spans 2 cols (featured) -->
-                    <div class="creative-item reveal">
+                    <div class="creative-item reveal" data-project="brand-identity" tabindex="0" role="button"
+                        aria-label="Brand Identity">
                         <span class="creative-category">Graphic Design</span>
-                        <img src="Assets/preview.png" alt="Brand Identity">
+                        <img src="Assets/Creative Work/Graphic Design/lotionDesign.png" alt="Brand Identity"
+                            loading="lazy">
                         <div class="creative-overlay">
                             <h3>Brand Identity</h3>
                             <p>Visual Design</p>
                         </div>
                     </div>
+
                     <!-- Creative Item 2 -->
-                    <div class="creative-item reveal">
+                    <div class="creative-item reveal" data-project="video-editing" tabindex="0" role="button"
+                        aria-label="Showreel 2026">
                         <span class="creative-category">Video Editing</span>
-                        <img src="Assets/preview.png" alt="Showreel 2026">
+                        <div class="creative-play-badge"><i class="fa fa-play"></i></div>
+                        <img src="Assets/Creative Work/Video Editing/video-poster.jpg" alt="Showreel 2026"
+                            loading="lazy">
                         <div class="creative-overlay">
                             <h3>Showreel 2026</h3>
                             <p>Motion Graphics</p>
                         </div>
                     </div>
+
                     <!-- Creative Item 3 -->
-                    <div class="creative-item reveal">
+                    <div class="creative-item reveal" data-project="social-media" tabindex="0" role="button"
+                        aria-label="Social Media Campaign">
                         <span class="creative-category">Social Media</span>
-                        <img src="Assets/preview.png" alt="Social Media Campaign">
+                        <img src="Assets/Creative Work/Social Media/introducing my portfolio.png"
+                            alt="Social Media Campaign" loading="lazy">
                         <div class="creative-overlay">
                             <h3>Social Media Campaign</h3>
                             <p>Content Creation</p>
                         </div>
                     </div>
+
                     <!-- Creative Item 4 — spans 2 rows tall -->
-                    <div class="creative-item reveal">
+                    <div class="creative-item reveal" data-project="illustration" tabindex="0" role="button"
+                        aria-label="Digital Art">
                         <span class="creative-category">Illustration</span>
-                        <img src="Assets/preview.png" alt="Digital Art">
+                        <img src="Assets/Creative Work/Graphic Design/TypoDesigns-12.png" alt="Digital Art"
+                            loading="lazy">
                         <div class="creative-overlay">
                             <h3>Digital Art</h3>
                             <p>Illustration</p>
                         </div>
                     </div>
+
                     <!-- Creative Item 5 -->
-                    <div class="creative-item reveal">
+                    <div class="creative-item reveal" data-project="poster-design" tabindex="0" role="button"
+                        aria-label="Poster Design">
                         <span class="creative-category">Graphic Design</span>
-                        <img src="Assets/preview.png" alt="Poster Design">
+                        <img src="Assets/Creative Work/Graphic Design/08.png" alt="Poster Design" loading="lazy">
                         <div class="creative-overlay">
                             <h3>Poster Design</h3>
                             <p>Print & Digital</p>
@@ -228,14 +290,43 @@
                     </div>
                 </div>
 
-
-                <div class="projects-actions reveal">
-                    <a href="#" target="_blank" class="btn btn-primary"><i class="fa fa-behance"
-                            style="margin-right: 8px;"></i> Behance</a>
-                    <a href="#" target="_blank" class="btn btn-outline">PicsArt</a>
+                <br>
+                <br>
+                <div class="canva-hero-actions reveal delay-3">
+                    <a href="https://www.behance.net/omar_13" target="_blank" rel="noopener noreferrer"
+                        class="canva-social-pill behance">
+                        <i class="fa fa-behance"></i>
+                        <span>Behance</span>
+                    </a>
+                    <a href="https://pin.it/2JDRQeHfb" target="_blank" rel="noopener noreferrer"
+                        class="canva-social-pill pinterest">
+                        <i class="fa fa-pinterest-p"></i>
+                        <span>Pinterest</span>
+                    </a>
                 </div>
             </div>
         </section>
+
+        <!-- Creative Project Lightbox / Gallery Modal -->
+        <div class="custom-modal" id="creative-modal" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="modal-backdrop"></div>
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <div class="modal-header-text">
+                        <span class="modal-category"></span>
+                        <h3 class="modal-title"></h3>
+                        <p class="modal-subtitle"></p>
+                    </div>
+                    <button class="modal-close" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-description"></p>
+                    <div class="modal-media-wrapper"></div>
+                    <div class="modal-thumbs-wrapper"></div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="lab-footer">
@@ -255,6 +346,7 @@
     <script src="js/scroll-system.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/creative.js"></script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",

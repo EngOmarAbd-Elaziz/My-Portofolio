@@ -21,6 +21,7 @@
     --btn-outline-hover: rgba(255, 255, 255, 0.1);
     --font-mono: 'JetBrains Mono', monospace;
     --font-body: 'Inter', sans-serif;
+    --font-heading: 'Space Grotesk', 'Inter', sans-serif;
     --nav-height: 80px;
     --radius-sm: 0.5rem;
     --radius-md: 1rem;
@@ -146,8 +147,8 @@ body.no-scroll .lab-footer {
     height: 12px;
     background: var(--highlight);
     border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
+    pointer-events: none !important;
+    z-index: 2147483647 !important; /* Maximum 32-bit integer z-index in all browsers */
     transform: translate(-50%, -50%);
     transition: width var(--transition-fast), height var(--transition-fast), background var(--transition-fast), opacity var(--transition-fast);
     box-shadow: 0 0 10px var(--highlight);
@@ -164,6 +165,7 @@ body.no-scroll .lab-footer {
     border: 1px solid var(--highlight);
     border-radius: 50%;
     opacity: 0.5;
+    pointer-events: none !important;
     transition: all var(--transition-fast);
 }
 

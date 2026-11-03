@@ -111,10 +111,10 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    height: 30px;
-    width: 30px;
-    overflow: visible;
-    /* Changed to visible for tooltips */
+    height: 34px;
+    width: 34px;
+    overflow: hidden; /* Keeps sun and moon inside the button boundaries! */
+    border-radius: 50%;
     flex-shrink: 0;
 }
 
@@ -129,28 +129,30 @@
 }
 
 .theme-icon {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     position: absolute;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    top: 50%;
+    left: 50%;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 }
 
 .theme-icon.sun {
-    transform: translateY(0);
+    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
 
 .theme-icon.moon {
-    transform: translateY(40px);
+    transform: translate(-50%, 150%) scale(0.5);
     opacity: 0;
 }
 
 body.theme-light .theme-icon.sun {
-    transform: translateY(-40px);
+    transform: translate(-50%, -150%) scale(0.5);
     opacity: 0;
 }
 
 body.theme-light .theme-icon.moon {
-    transform: translateY(0);
+    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
 

@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio - Omar Abdelaziz</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/palette.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Assets/palette.png">
+
+    <meta name="description"
+        content="Graphic Design Portfolio of Omar Abdelaziz. Visual identity systems, typography, branding, product packaging, and creative storytelling.">
+    <meta name="keywords"
+        content="Omar Abdelaziz, Graphic Design, Brand Identity, Visual Designer, Cairo Egypt, FCAI GD Club, LUX Glow, Typography">
+    <meta name="author" content="Omar Abdelaziz">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Graphic Design Portfolio &#x2014; Omar Abdelaziz">
+    <meta property="og:description"
+        content="Explore Omar Abdelaziz's graphic design portfolio: visual identities, branding, typography, and creative storytelling.">
+    <meta property="og:image" content="Assets/Creative Work/Creative Portfolio/1.png">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700;900&family=Inter:wght@400;500;700&family=Satisfy&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="styles/creative-portfolio.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/creative-intro-lightbox.css">
+</head>
+
+<body class="theme-dark no-scroll">
+    <!-- Creative Intro Animation Overlay (Stylus / Graphic Pen & Palette Drop-In) -->
+    <div id="creative-intro-overlay" class="creative-intro-overlay">
+        <!-- Palette / Paint Ring Ripples -->
+        <div class="creative-ripple-container">
+            <div class="creative-ripple"></div>
+            <div class="creative-ripple ripple-accent"></div>
+            <div class="creative-ripple ripple-warm"></div>
+        </div>
+
+        <div class="creative-tool-wrapper" id="creative-tool-wrapper">
+            <div class="creative-tool" id="creative-tool">
+                <!-- SVG Stylus / Designer Digital Pen & Color Palette -->
+                <svg width="300" height="300" viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="penBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#3B82F6" />
+                            <stop offset="50%" stop-color="#8B5CF6" />
+                            <stop offset="100%" stop-color="#EC4899" />
+                        </linearGradient>
+                        <linearGradient id="nibGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FDE047" />
+                            <stop offset="100%" stop-color="#F59E0B" />
+                        </linearGradient>
+                        <linearGradient id="paletteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#1E293B" />
+                            <stop offset="100%" stop-color="#0F172A" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Designer Palette Background Board -->
+                    <path
+                        d="M60 120 C40 80 80 30 140 30 C200 30 240 70 230 110 C220 145 190 170 140 170 C100 170 75 150 60 120 Z"
+                        fill="url(#paletteGrad)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="3" />
+
+                    <!-- Color Swatches / Paint Drops -->
+                    <circle cx="105" cy="65" r="10" fill="#22D3EE" filter="drop-shadow(0 0 8px #22D3EE)" />
+                    <circle cx="140" cy="55" r="10" fill="#A855F7" filter="drop-shadow(0 0 8px #A855F7)" />
+                    <circle cx="175" cy="68" r="10" fill="#F43F5E" filter="drop-shadow(0 0 8px #F43F5E)" />
+                    <circle cx="195" cy="100" r="10" fill="#EAB308" filter="drop-shadow(0 0 8px #EAB308)" />
+
+                    <!-- Thumb Hole in Palette -->
+                    <ellipse cx="100" cy="125" rx="16" ry="16" fill="#0B1120" stroke="rgba(255, 255, 255, 0.2)"
+                        stroke-width="2" />
+
+                    <!-- Digital Stylus / Pen Tool (Angled Across) -->
+                    <g transform="rotate(-35 140 100)">
+                        <!-- Pen Body -->
+                        <rect x="132" y="20" width="16" height="130" rx="8" fill="url(#penBody)" stroke="#FFFFFF"
+                            stroke-width="1.5" />
+                        <!-- Grip Ring -->
+                        <rect x="131" y="95" width="18" height="25" rx="3" fill="#0F172A" stroke="#22D3EE"
+                            stroke-width="1.5" />
+                        <!-- Dual Rocker Buttons -->
+                        <rect x="137" y="100" width="6" height="7" rx="2" fill="#22D3EE" />
+                        <rect x="137" y="110" width="6" height="7" rx="2" fill="#22D3EE" />
+                        <!-- Pen Cone / Nib Base -->
+                        <polygon points="132,150 148,150 143,172 137,172" fill="#334155" />
+                        <!-- Golden Nib Tip -->
+                        <polygon points="137,172 143,172 140,186" fill="url(#nibGold)" />
+                        <!-- Glowing Ink Sparkle at Tip -->
+                        <circle cx="140" cy="186" r="4" fill="#FFFFFF" filter="drop-shadow(0 0 10px #22D3EE)" />
+                    </g>
+                </svg>
+                <div class="creative-tool-glow"></div>
+            </div>
+            <div class="creative-click-to-start">
+                <span class="material-symbols-outlined" style="font-size: 1.4rem; color: var(--highlight);">brush</span>
+                <span>Click to Enter Creative Studio</span>
+            </div>
+        </div>
+    </div>
+    <!-- Simulation Layer (Particles Background) -->
+    <canvas id="simulation-bg" class="simulation-bg"></canvas>
+
+    <!-- ONLY ONE ORIGINAL NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html#hero" class="nav-logo">OMAR DEV</a>
+
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link" data-section="home" title="Return to Main Homepage">
+                    <span class="nav-text">Home</span>
+                    <span class="material-symbols-outlined nav-icon">home</span>
+                </a>
+                <a href="#project-01" class="nav-link" data-section="project-01">
+                    <span class="nav-text">Projects</span>
+                    <span class="material-symbols-outlined nav-icon">sports_esports</span>
+                </a>
+                <a href="#other-works" class="nav-link" data-section="other-works">
+                    <span class="nav-text">Other Works</span>
+                    <span class="material-symbols-outlined nav-icon">palette</span>
+                </a>
+                <a href="#experiences" class="nav-link" data-section="experiences">
+                    <span class="nav-text">Timeline</span>
+                    <span class="material-symbols-outlined nav-icon">history_edu</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <span class="nav-text">Contact</span>
+                    <span class="material-symbols-outlined nav-icon">mail</span>
+                </a>
+
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+                    <span class="nav-text">Theme</span>
+                    <span class="material-symbols-outlined theme-icon sun">light_mode</span>
+                    <span class="material-symbols-outlined theme-icon moon">dark_mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Custom Game Cursor -->
+    <div class="cursor-follower" id="cursor"></div>
+
+    <main id="main-content" class="creative-portfolio-page">
+
+        <!-- ==============================================================
+             1. Hero Section — Slide 1 Exact Design
+             ============================================================== -->
+        <section class="canva-hero" id="hero">
+            <div class="canva-hero-container">
+                <!-- Large Display Typography -->
+                <div class="canva-hero-title-wrap reveal">
+                    <span class="canva-hero-script">Creative</span>
+                    <h1 class="canva-hero-portfolio-text">PORTFOLIO</h1>
+                </div>
+
+                <!-- Personal Cutout Photo from Presentation Slide 1 -->
+                <div class="canva-hero-photo-wrap reveal delay-1">
+                    <img src="Assets/Creative Work/omar-photo.png" alt="Omar Abdelaziz &#x2014; Graphic Designer"
+                        class="canva-hero-photo">
+                </div>
+
+                <!-- Bottom Meta Row from Slide 1 -->
+                <div class="canva-hero-meta-row reveal delay-2">
+                    <div class="canva-meta-left">
+                        <div class="canva-meta-name">Omar Abdelaziz</div>
+                        <div class="canva-meta-role">Graphic Designer</div>
+                    </div>
+                    <div class="canva-meta-right">
+                        <a href="https://engomarabd-elaziz.github.io/My-Portofolio/"
+                            class="canva-meta-link">programming_portfolio.com</a>
+                        <a href="tel:+201020468877" class="canva-meta-link">+20 102 046 8877</a>
+                    </div>
+                </div>
+
+                <!-- Social Links — Behance & Pinterest -->
+                <div class="canva-hero-actions reveal delay-3">
+                    <a href="https://www.behance.net/omar_13" target="_blank" rel="noopener noreferrer"
+                        class="canva-social-pill behance">
+                        <i class="fa fa-behance"></i>
+                        <span>Behance</span>
+                    </a>
+                    <a href="https://pin.it/2JDRQeHfb" target="_blank" rel="noopener noreferrer"
+                        class="canva-social-pill pinterest">
+                        <i class="fa fa-pinterest-p"></i>
+                        <span>Pinterest</span>
+                    </a>
+                </div>
+
+                <!-- PDF Download — Prominent top position, near hero -->
+                <div class="canva-pdf-strip reveal delay-4">
+                    <span class="pdf-strip-label">
+                        <i class="fa fa-file-pdf-o"></i>
+                        Full presentation available:
+                    </span>
+                    <a href="Assets/Creative%20Work/Creative%20Portfolio/Creative%20Portfolio.pdf"
+                        download="Omar_Abdelaziz_Creative_Portfolio.pdf" class="btn btn-primary pdf-strip-btn">
+                        <i class="fa fa-download" style="margin-right: 8px;"></i>
+                        Download PDF Presentation
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==============================================================
+             2. About Me & Philosophy (Slides 2, 3, 4)
+             ============================================================== -->
+        <section class="canva-editorial-section">
+            <div class="container">
+                <div class="canva-editorial-frame reveal">
+                    <h2 class="canva-editorial-title">About me</h2>
+                    <p class="canva-editorial-text">
+                        I'm a creative mind with a passion for turning ideas into meaningful visual experiences.
+                        I enjoy exploring the world of graphic design, experimenting with colors, typography, layouts,
+                        and visual compositions to create designs that are both aesthetically pleasing and purposeful.
+                    </p>
+                    <p class="canva-editorial-text">
+                        For me, design is more than just making things look good &mdash; it's about communicating ideas,
+                        expressing creativity, and paying attention to the little details that make a difference.
+                        Always curious, always learning, and always looking for new ways to bring ideas to life.
+                    </p>
+
+                    <blockquote class="canva-editorial-quote">
+                        &ldquo;Good design is not just seen, it's felt.&rdquo;
+                    </blockquote>
+
+                    <!-- Skills from Slide 3 -->
+                    <div class="canva-skills-grid">
+                        <div class="canva-skill-item">
+                            <span class="canva-skill-num">1</span>
+                            <span class="canva-skill-name">Graphic design</span>
+                        </div>
+                        <div class="canva-skill-item">
+                            <span class="canva-skill-num">2</span>
+                            <span class="canva-skill-name">Photography</span>
+                        </div>
+                        <div class="canva-skill-item">
+                            <span class="canva-skill-num">3</span>
+                            <span class="canva-skill-name">Creative direction</span>
+                        </div>
+                        <div class="canva-skill-item">
+                            <span class="canva-skill-num">4</span>
+                            <span class="canva-skill-name">Branding</span>
+                        </div>
+                        <div class="canva-skill-item">
+                            <span class="canva-skill-num">5</span>
+                            <span class="canva-skill-name">Social media design</span>
+                        </div>
+                        <div class="canva-skill-item">
+                            <span class="canva-skill-num">6</span>
+                            <span class="canva-skill-name">Visual storytelling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==============================================================
+             3. Project 01 — FCAI CU Game Development Club (Slide 5)
+             Logo · Brand Marks · Workshop Campaigns · Event Designs
+             ============================================================== -->
+        <section id="project-01" class="canva-project-section">
+            <div class="container">
+                <div class="canva-project-header reveal">
+                    <span class="canva-project-badge">PRESENTATION CASE STUDY</span>
+                    <h2 class="canva-project-num-title">Project 01</h2>
+                    <span class="canva-project-client">FCAI CU Game Development Club</span>
+                    <p class="canva-project-desc">
+                        A visual identity project for FCAI CU Game Development Club, a community dedicated to game
+                        development and creative technology.
+                        The project focuses on creating a distinctive visual identity that reflects the club's passion
+                        for game development, creativity, and innovation.
+                        From the official logo and brand marks to event workshop campaigns and social media creatives,
+                        the goal was to establish a consistent visual language that gives the community a recognizable
+                        presence.
+                    </p>
+                    <div class="canva-project-scope-wrap">
+                        <span class="canva-scope-label">Scope:</span>
+                        <span class="canva-scope-tag">Logo Design</span>
+                        <span class="canva-scope-tag">Brand Identity</span>
+                        <span class="canva-scope-tag">Brand Marks</span>
+                        <span class="canva-scope-tag">Event Campaigns</span>
+                        <span class="canva-scope-tag">Social Media</span>
+                    </div>
+                </div>
+
+                <!--
+                    Bento / Masonry Puzzle Grid — Project 01
+                    Layout (3-col, auto-rows: 260px, dense flow):
+                    Row 1: [LOGO wide 2col] [Workshop#1 1col]
+                    Row 2: [MonoLight 1col] [MonoDark 1col] [04-1 1col]  ← dense fills
+                    Row 3: [Workshop#2 wide 2col] [Workshop#3 1col]
+                    Row 4: [EditedGamer wide 2col] [Workshop#4 1col]
+                -->
+                <div class="bento-gallery">
+
+                    <!-- Primary Vector Emblem — Wide Featured -->
+                    <div class="bento-item bento-wide reveal">
+                        <span class="creative-category">Main Logo</span>
+                        <img src="Assets/Creative Work/Illustration/LOGO.png"
+                            alt="FCAI CU Game Development Club Official Logo" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Official Club Emblem</h3>
+                            <p>Vector Identity System &bull; Isometric Controller Geometry</p>
+                        </div>
+                    </div>
+
+                    <!-- Workshop #1 -->
+                    <div class="bento-item reveal delay-1">
+                        <span class="creative-category">Event Campaign</span>
+                        <img src="Assets/Creative Work/Social Media/Workshop%231.png"
+                            alt="Workshop #1 — Intro to VFX and Shader Crafting" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Workshop #1</h3>
+                            <p>Intro to VFX &amp; Shader Crafting</p>
+                        </div>
+                    </div>
+
+                    <!-- Pixel Art Concept — متخليش الدنيا تبكسلك -->
+                    <div class="bento-item reveal delay-2">
+                        <span class="creative-category">Conceptual Art</span>
+                        <img src="Assets/Creative Work/Graphic Design/04-1.png" alt="متخليش الدنيا تبكسلك — Pixel Art"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>&#x645;&#x62A;&#x62E;&#x644;&#x64A;&#x634; &#x627;&#x644;&#x62F;&#x646;&#x64A;&#x627;
+                                &#x62A;&#x628;&#x643;&#x633;&#x644;&#x643;</h3>
+                            <p>Pixel Art Concept &bull; 8-Bit Creation</p>
+                        </div>
+                    </div>
+
+                    <!-- Workshop #2 — Wide -->
+                    <div class="bento-item bento-wide reveal delay-1">
+                        <span class="creative-category">Event Campaign</span>
+                        <img src="Assets/Creative Work/Social Media/Workshop%232.png" alt="Workshop #2 Social Graphic"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Workshop #2</h3>
+                            <p>Speaker Spotlight &bull; Social Creative</p>
+                        </div>
+                    </div>
+
+                    <!-- Workshop #3 -->
+                    <div class="bento-item reveal delay-2">
+                        <span class="creative-category">Event Campaign</span>
+                        <img src="Assets/Creative Work/Social Media/Workshop%233.png" alt="Workshop #3 Social Graphic"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Workshop #3</h3>
+                            <p>Technical Session Announcement</p>
+                        </div>
+                    </div>
+
+                    <!-- Gamer Identity Poster — Wide -->
+                    <div class="bento-item bento-wide reveal delay-1">
+                        <span class="creative-category">Esports Poster</span>
+                        <img src="Assets/Creative Work/Social Media/EditedGamerPoster.png"
+                            alt="Gamer Identity Poster — Atmospheric Neon" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Gamer Identity Poster</h3>
+                            <p>Atmospheric Neon Art &bull; Esports Aesthetic</p>
+                        </div>
+                    </div>
+
+                    <!-- Workshop #4 -->
+                    <div class="bento-item reveal delay-2">
+                        <span class="creative-category">Event Campaign</span>
+                        <img src="Assets/Creative Work/Social Media/Workshop%234.png" alt="Workshop #4 Social Graphic"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Workshop #4</h3>
+                            <p>Masterclass Wrap-Up Visual</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==============================================================
+             4. Project 02 — Programming & AI Educational Design (Slide 6)
+             Thumbnails · Social Media · Motion Graphics Reel
+             ============================================================== -->
+        <section id="project-02" class="canva-project-section">
+            <div class="container">
+                <div class="canva-project-header reveal">
+                    <span class="canva-project-badge">PRESENTATION CASE STUDY</span>
+                    <h2 class="canva-project-num-title">Project 02</h2>
+                    <span class="canva-project-client">Educational Content &amp; Social Media Designs</span>
+                    <p class="canva-project-desc">
+                        A collection of visual designs created for my work as a Programming &amp; AI instructor.
+                        This project explores how visual communication can make educational content more engaging,
+                        clear, and appealing to students.
+                        It includes YouTube thumbnails, social media creatives, character artwork, and a signature
+                        motion graphic reel — all maintaining a consistent visual language.
+                    </p>
+                    <div class="canva-project-scope-wrap">
+                        <span class="canva-scope-label">Scope:</span>
+                        <span class="canva-scope-tag">YouTube Thumbnails</span>
+                        <span class="canva-scope-tag">Social Media Design</span>
+                        <span class="canva-scope-tag">Educational Graphics</span>
+                        <span class="canva-scope-tag">Character Art</span>
+                        <span class="canva-scope-tag">Motion Graphics</span>
+                    </div>
+                </div>
+
+                <!--
+                    Bento Layout — Project 02 (3-col):
+                    Row 1: [Intro wide 2col] [Lesson01 1col]
+                    Row 2: [Lesson02 1col] [Lesson03 1col] [wezza 1col]
+                    Row 3: [post1 1col] [empty x2]  ← adjust with community post
+                    Full width below: Video Reel
+                -->
+                <div class="bento-gallery">
+
+                    <!-- Monogram Study — Light Surface -->
+                    <div class="bento-item reveal delay-2">
+                        <span class="creative-category">Brand Mark</span>
+                        <img src="Assets/Creative Work/Illustration/3.png" alt="CODEX Monogram Light Surface"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Monogram Study</h3>
+                            <p>High-Contrast Light Surface Variant</p>
+                        </div>
+                    </div>
+
+                    <!-- Monogram Study — Dark / Circuit Board -->
+                    <div class="bento-item reveal delay-1">
+                        <span class="creative-category">Brand Mark</span>
+                        <img src="Assets/Creative Work/Illustration/4.png" alt="CODEX Monogram Dark Circuit Board"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Monogram Study</h3>
+                            <p>Circuit Board Dark Variant</p>
+                        </div>
+                    </div>
+
+                    <!-- YouTube Lesson 01 -->
+                    <div class="bento-item reveal delay-1">
+                        <span class="creative-category">YouTube Thumbnail</span>
+                        <img src="Assets/Creative Work/Social Media/Lesson01_Thumbnail.jpeg"
+                            alt="Lesson 01 — Programming Fundamentals" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>&#x627;&#x644;&#x62D;&#x635;&#x629;
+                                &#x627;&#x644;&#x62A;&#x623;&#x633;&#x64A;&#x633;&#x64A;&#x629;</h3>
+                            <p>Programming Fundamentals &bull; CODEX</p>
+                        </div>
+                    </div>
+
+                    <!-- YouTube Lesson 02 -->
+                    <div class="bento-item reveal delay-2">
+                        <span class="creative-category">YouTube Thumbnail</span>
+                        <img src="Assets/Creative Work/Social Media/Lesson02_Thumbnail.png"
+                            alt="Lesson 02 — Functions and Flowcharts" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>&#x627;&#x644;&#x62F;&#x648;&#x627;&#x644;
+                                &#x648;&#x627;&#x644;&#x645;&#x62E;&#x637;&#x637;&#x627;&#x62A;</h3>
+                            <p>JavaScript Functions &bull; CODEX</p>
+                        </div>
+                    </div>
+
+                    <!-- YouTube Lesson 03 -->
+                    <div class="bento-item reveal delay-1">
+                        <span class="creative-category">YouTube Thumbnail</span>
+                        <img src="Assets/Creative Work/Social Media/Lesson03_Thumbnail.png"
+                            alt="Lesson 03 — HTML and CSS" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>HTML &amp; CSS Masterclass</h3>
+                            <p>Web Development &bull; CODEX</p>
+                        </div>
+                    </div>
+
+                    <!-- Character Art — wezza -->
+                    <div class="bento-item bento-tall reveal delay-2">
+                        <span class="creative-category">Character Art</span>
+                        <img src="Assets/Creative Work/Social Media/wezza.png"
+                            alt="Creative Character Visual Storytelling" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Creative Visual Storytelling</h3>
+                            <p>Character Social Artwork</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==============================================================
+             5. Project 03 — LUX Glow Brand Identity (Slide 7)
+             Logo · Packaging · Brand Marks · Advertising
+             ============================================================== -->
+        <section id="project-03" class="canva-project-section">
+            <div class="container">
+                <div class="canva-project-header reveal">
+                    <span class="canva-project-badge">PRESENTATION CASE STUDY</span>
+                    <h2 class="canva-project-num-title">Project 03</h2>
+                    <span class="canva-project-client">LUX Glow &mdash; Beauty &amp; Personal Care Brand Identity</span>
+                    <p class="canva-project-desc">
+                        A complete branding project for a beauty and personal care startup specializing in makeup,
+                        skincare, haircare, and body care products.
+                        The project covers the full visual identity — from initial logo concept to packaging design and
+                        advertising, creating a cohesive brand presence across every touchpoint.
+                        Every element communicates the brand's botanical, premium personality.
+                    </p>
+                    <div class="canva-project-scope-wrap">
+                        <span class="canva-scope-label">Scope:</span>
+                        <span class="canva-scope-tag">Logo Design</span>
+                        <span class="canva-scope-tag">Brand Identity</span>
+                        <span class="canva-scope-tag">Packaging Design</span>
+                        <span class="canva-scope-tag">3D Mockups</span>
+                        <span class="canva-scope-tag">Advertising</span>
+                        <span class="canva-scope-tag">Brand Mark Variants</span>
+                    </div>
+                </div>
+
+                <!--
+                    Bento Layout — Project 03 (3-col, dense):
+                    Row 1-2: [lotion featured 2×2] [ProfilePic tall 1×2]
+                    Row 3: [CoverPhoto wide 2col] [copy4 1col]
+                    Row 4: [copy 1col] [copy2 1col] [copy3 1col]
+                -->
+                <div class="bento-gallery">
+
+                    <!-- 3D Packaging Mockup — Primary Featured -->
+                    <div class="bento-item bento-featured reveal">
+                        <span class="creative-category">3D Product Mockup</span>
+                        <img src="Assets/Creative Work/Graphic Design/lotionDesign.png"
+                            alt="LUX Glow Body Lotion Underwater Packaging Mockup" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>LUX Glow &bull; Body Lotion</h3>
+                            <p>3D Underwater Visualization &bull; Botanical Label Design</p>
+                        </div>
+                    </div>
+
+                    <!-- LUX Glow Social Post -->
+                    <div class="bento-item reveal delay-1">
+                        <span class="creative-category">Social Post</span>
+                        <img src="Assets/Creative Work/Social Media/post1.png" alt="Social Post" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Social Engagement</h3>
+                            <p>Social Media Carousel Visual</p>
+                        </div>
+                    </div>
+
+                    <!-- Brand Seal Avatar — Tall -->
+                    <div class="bento-item bento-tall reveal delay-1">
+                        <span class="creative-category">Brand Mark</span>
+                        <img src="Assets/Creative Work/Graphic Design/Untitled-1_Profile Picture.png"
+                            alt="LUX Glow Brand Seal and Avatar" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Brand Seal &amp; Avatar</h3>
+                            <p>Circular Floral Iconography &bull; Primary Mark</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Advertising Banner — Wide -->
+                    <div class="bento-item bento-wide reveal delay-2">
+                        <span class="creative-category">Advertising Banner</span>
+                        <img src="Assets/Creative Work/Graphic Design/Untitled-1_Cover Photo.png"
+                            alt="LUX Glow Social Media Cover Banner" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Brand Advertising Banner</h3>
+                            <p>Wide-Format Social Header Composition</p>
+                        </div>
+                    </div>
+
+                    <!-- Embossed Line Variant -->
+                    <div class="bento-item reveal delay-1">
+                        <span class="creative-category">Brand Mark</span>
+                        <img src="Assets/Creative Work/Graphic Design/Untitled-1_Profile Picture copy 4.png"
+                            alt="LUX Glow Embossed Mark Variant" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Embossed Line Variant</h3>
+                            <p>Single-Color Packaging Application</p>
+                        </div>
+                    </div>
+
+                    <!-- Mark Study copy -->
+                    <div class="bento-item reveal delay-2">
+                        <span class="creative-category">Brand Mark</span>
+                        <img src="Assets/Creative Work/Illustration/Untitled-1_Profile Picture copy.png"
+                            alt="LUX Glow Mark Study Variant" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Mark Study — Variant A</h3>
+                            <p>Brand Consistency Study</p>
+                        </div>
+                    </div>
+
+                    <!-- Mark Study copy 2 -->
+                    <div class="bento-item reveal delay-1">
+                        <span class="creative-category">Brand Mark</span>
+                        <img src="Assets/Creative Work/Illustration/Untitled-1_Profile Picture copy 2.png"
+                            alt="LUX Glow Mark Study Variant 2" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Mark Study — Variant B</h3>
+                            <p>Alternative Color Application</p>
+                        </div>
+                    </div>
+
+                    <!-- Mark Study copy 3 -->
+                    <div class="bento-item reveal delay-2">
+                        <span class="creative-category">Brand Mark</span>
+                        <img src="Assets/Creative Work/Illustration/Untitled-1_Profile Picture copy 3.png"
+                            alt="LUX Glow Mark Study Variant 3" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Mark Study — Variant C</h3>
+                            <p>Reversed Color Scheme</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==============================================================
+             6. Other Creative Works
+             Arabic Posters · Typography · Illustrations · Book Covers
+             ============================================================== -->
+        <section id="other-works" class="canva-project-section">
+            <div class="container">
+                <div class="canva-project-header reveal">
+                    <span class="canva-project-badge">SELECTED WORKS</span>
+                    <h2 class="canva-project-num-title">Other Creative Works</h2>
+                    <span class="canva-project-client">Arabic Posters &bull; Typography &bull; Illustration &bull; Book
+                        Covers</span>
+                    <p class="canva-project-desc">
+                        A curated collection of independent creative works &mdash; expressive Arabic posters,
+                        typographic art, digital illustrations, and editorial book cover designs.
+                        Each piece is a personal exploration of visual storytelling, merging modern design sensibilities
+                        with cultural depth and emotional expression.
+                    </p>
+                </div>
+
+                <!--
+                    Bento Layout — Other Works (3-col, dense):
+                    Row 1: [08.png wide 2col] [TypoDesigns-07 tall 1×2]
+                    Row 2: [06.png 1col] [07.png 1col] (tall continues col 3)
+                    Row 3: [05.png wide 2col] [TypoDesigns-12 1col]
+                    Row 4: [TypoDesigns-08 1col] [TypoDesigns-09 1col] [TypoDesigns-10 1col]
+                    Row 5: [BookCover1 1col] [BookCover2 1col] [BookCover3 1col]
+                -->
+                <div class="bento-gallery">
+
+                    <!-- ولسوف يعطيك ربك فترضى — Wide -->
+                    <div class="bento-item bento-wide reveal">
+                        <span class="creative-category">Poster Design</span>
+                        <img src="Assets/Creative Work/Graphic Design/08.png"
+                            alt="&#x648;&#x644;&#x633;&#x648;&#x641; &#x64A;&#x639;&#x637;&#x64A;&#x643; &#x631;&#x628;&#x643; &#x641;&#x62A;&#x631;&#x636;&#x649;"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>&#x648;&#x644;&#x633;&#x648;&#x641; &#x64A;&#x639;&#x637;&#x64A;&#x643;
+                                &#x631;&#x628;&#x643; &#x641;&#x62A;&#x631;&#x636;&#x649;</h3>
+                            <p>Spiritual Light &bull; Arabic Calligraphy</p>
+                        </div>
+                    </div>
+
+                    <!-- I am an ARTIST — Tall (col 3, rows 1-2) -->
+                    <div class="bento-item bento-tall reveal delay-1">
+                        <span class="creative-category">Illustration</span>
+                        <img src="Assets/Creative Work/Illustration/TypoDesigns-07.png" alt="I am an ARTIST"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>I am an ARTIST</h3>
+                            <p>Typographic Character Illustration</p>
+                        </div>
+                    </div>
+
+                    <!-- في العزلة تسمع صوت الروح -->
+                    <div class="bento-item reveal delay-2">
+                        <span class="creative-category">Poster Design</span>
+                        <img src="Assets/Creative Work/Graphic Design/06.png"
+                            alt="&#x641;&#x64A; &#x627;&#x644;&#x639;&#x632;&#x644;&#x629; &#x62A;&#x633;&#x645;&#x639; &#x635;&#x648;&#x62A; &#x627;&#x644;&#x631;&#x648;&#x62D;"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>&#x641;&#x64A; &#x627;&#x644;&#x639;&#x632;&#x644;&#x629; &#x62A;&#x633;&#x645;&#x639;
+                                &#x635;&#x648;&#x62A; &#x627;&#x644;&#x631;&#x648;&#x62D;</h3>
+                            <p>Architectural Shadows &bull; Crimson Study</p>
+                        </div>
+                    </div>
+
+                    <!-- المستقبل مش غامض -->
+                    <div class="bento-item reveal delay-1">
+                        <span class="creative-category">Poster Design</span>
+                        <img src="Assets/Creative Work/Graphic Design/07.png"
+                            alt="&#x627;&#x644;&#x645;&#x633;&#x62A;&#x642;&#x628;&#x644; &#x645;&#x634; &#x63A;&#x627;&#x645;&#x636;"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>&#x627;&#x644;&#x645;&#x633;&#x62A;&#x642;&#x628;&#x644; &#x645;&#x634;
+                                &#x63A;&#x627;&#x645;&#x636;</h3>
+                            <p>Candlelight Contrast &bull; Reflection of Present</p>
+                        </div>
+                    </div>
+
+                    <!-- اصنع طريقك — Wide -->
+                    <div class="bento-item bento-wide reveal delay-2">
+                        <span class="creative-category">Poster Design</span>
+                        <img src="Assets/Creative Work/Graphic Design/05.png"
+                            alt="&#x627;&#x635;&#x646;&#x639; &#x637;&#x631;&#x64A;&#x642;&#x643;" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>&#x627;&#x635;&#x646;&#x639; &#x637;&#x631;&#x64A;&#x642;&#x643;</h3>
+                            <p>&#x62D;&#x64A;&#x646; &#x64A;&#x639;&#x62C;&#x632;
+                                &#x627;&#x644;&#x622;&#x62E;&#x631;&#x648;&#x646; &#x639;&#x646;
+                                &#x631;&#x624;&#x64A;&#x62A;&#x647; &bull; Red Pencil Bridge</p>
+                        </div>
+                    </div>
+
+                    <!-- You're On Your Own Kid -->
+                    <div class="bento-item reveal delay-1">
+                        <span class="creative-category">Typography</span>
+                        <img src="Assets/Creative Work/Graphic Design/TypoDesigns-12.png" alt="You're On Your Own Kid"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>You're On Your Own Kid</h3>
+                            <p>Dimensional Perspective Lettering</p>
+                        </div>
+                    </div>
+
+                    <!-- Typographic Experiment 08 -->
+                    <div class="bento-item reveal delay-2">
+                        <span class="creative-category">Typography</span>
+                        <img src="Assets/Creative Work/Illustration/TypoDesigns-08.png" alt="Typographic Design 08"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Typographic Experiment</h3>
+                            <p>Lettering &bull; Visual Composition</p>
+                        </div>
+                    </div>
+
+                    <!-- Typographic Experiment 09 -->
+                    <div class="bento-item reveal delay-1">
+                        <span class="creative-category">Typography</span>
+                        <img src="Assets/Creative Work/Illustration/TypoDesigns-09.png" alt="Typographic Design 09"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Typographic Experiment</h3>
+                            <p>Mixed Media &bull; Layout Art</p>
+                        </div>
+                    </div>
+
+                    <!-- Typographic Experiment 10 -->
+                    <div class="bento-item reveal delay-2">
+                        <span class="creative-category">Typography</span>
+                        <img src="Assets/Creative Work/Illustration/TypoDesigns-10.png" alt="Typographic Design 10"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Typographic Experiment</h3>
+                            <p>Arabic Script Abstraction</p>
+                        </div>
+                    </div>
+
+                    <!-- Book Cover — حياتي مع ابنة الياكوزا -->
+                    <div class="bento-item reveal delay-1">
+                        <span class="creative-category">Book Cover</span>
+                        <img src="Assets/Creative Work/Graphic Design/1743382894652.jpg"
+                            alt="&#x631;&#x648;&#x627;&#x64A;&#x629; &#x62D;&#x64A;&#x627;&#x62A;&#x64A; &#x645;&#x639; &#x627;&#x628;&#x646;&#x629; &#x627;&#x644;&#x64A;&#x627;&#x643;&#x648;&#x632;&#x627;"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>&#x62D;&#x64A;&#x627;&#x62A;&#x64A; &#x645;&#x639; &#x627;&#x628;&#x646;&#x629;
+                                &#x627;&#x644;&#x64A;&#x627;&#x643;&#x648;&#x632;&#x627;</h3>
+                            <p>Editorial Book Cover &bull; Silhouette Typography</p>
+                        </div>
+                    </div>
+
+                    <!-- Book Cover — بطل أريزونا -->
+                    <div class="bento-item reveal delay-2">
+                        <span class="creative-category">Book Cover</span>
+                        <img src="Assets/Creative Work/Graphic Design/1743382894683.jpg"
+                            alt="&#x631;&#x648;&#x627;&#x64A;&#x629; &#x628;&#x637;&#x644; &#x623;&#x631;&#x64A;&#x632;&#x648;&#x646;&#x627;"
+                            loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>&#x628;&#x637;&#x644; &#x623;&#x631;&#x64A;&#x632;&#x648;&#x646;&#x627;</h3>
+                            <p>Editorial Novel Cover &bull; Sky Atmosphere</p>
+                        </div>
+                    </div>
+
+                    <!-- Book Cover — Dark Narrative Study -->
+                    <div class="bento-item reveal delay-3">
+                        <span class="creative-category">Book Cover</span>
+                        <img src="Assets/Creative Work/Graphic Design/1743382894814.jpg"
+                            alt="Dark Narrative Silhouette Study" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Dark Narrative Study</h3>
+                            <p>Textured Publishing Illustration</p>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Launch Campaign — Wide -->
+                    <div class="bento-item bento-wide reveal">
+                        <span class="creative-category">Launch Campaign</span>
+                        <img src="Assets/Creative Work/Social Media/introducing my portfolio.png"
+                            alt="Introducing My Portfolio — Campaign Creative" loading="lazy">
+                        <div class="creative-overlay">
+                            <h3>Introducing My Portfolio</h3>
+                            <p>Campaign Creative &bull; Personal Branding</p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Signature Motion Graphic Reel — Full Width Below Gallery -->
+                <div class="bento-video-wrapper reveal">
+                    <video controls playsinline preload="metadata"
+                        poster="Assets/Creative Work/Video Editing/video-poster.jpg">
+                        <source src="Assets/Creative Work/Video Editing/Signature Vid (Motion Graphic).mp4"
+                            type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                    <div class="bento-video-caption">
+                        <div>
+                            <h4>Signature Motion Graphic Reel</h4>
+                            <p>Kinetic Typography &bull; Video Editing &bull; 1080p 60fps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==============================================================
+             7. Career Experiences (Slide 8)
+             ============================================================== -->
+        <section class="canva-editorial-section" id="experiences">
+            <div class="container">
+                <div class="canva-project-header reveal">
+                    <span class="canva-project-badge">CAREER PROGRESSION</span>
+                    <h2 class="canva-project-num-title">Experiences</h2>
+                </div>
+
+                <div class="canva-timeline-flow">
+                    <div class="canva-timeline-card reveal">
+                        <div class="canva-timeline-circle-num">1</div>
+                        <div class="canva-timeline-year">2024</div>
+                        <div class="canva-timeline-details">
+                            <h4>Graphic Design Trainee</h4>
+                            <p>at NASBEE in Egypt</p>
+                        </div>
+                    </div>
+
+                    <div class="canva-timeline-card reveal delay-1">
+                        <div class="canva-timeline-circle-num">2</div>
+                        <div class="canva-timeline-year">2025</div>
+                        <div class="canva-timeline-details">
+                            <h4>Social Media Designer</h4>
+                            <p>at FCAI CU Game Development Club</p>
+                        </div>
+                    </div>
+
+                    <div class="canva-timeline-card reveal delay-2">
+                        <div class="canva-timeline-circle-num">3</div>
+                        <div class="canva-timeline-year">2026</div>
+                        <div class="canva-timeline-details">
+                            <h4>Creative Designer Freelance</h4>
+                            <p>at Khamsat, Mostaql &amp; Private Clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==============================================================
+             8. Let's Work Together & THANK YOU (Slides 9 & 10)
+             ============================================================== -->
+        <section class="canva-closing-section" id="contact">
+            <div class="container">
+                <div class="canva-closing-card reveal">
+                    <span class="canva-closing-script">Let's work together</span>
+
+                    <div class="canva-closing-contact-grid">
+                        <a href="mailto:omar.abdelaziz.gamedev@gmail.com" class="canva-contact-btn">
+                            <i class="fa fa-envelope" style="color: var(--highlight);"></i>
+                            <span>omar.abdelaziz.gamedev@gmail.com</span>
+                        </a>
+                        <a href="tel:+201020468877" class="canva-contact-btn">
+                            <i class="fa fa-phone" style="color: var(--highlight);"></i>
+                            <span>+20 102 046 8877</span>
+                        </a>
+                        <a href="https://www.behance.net/omar_13" target="_blank" rel="noopener noreferrer"
+                            class="canva-contact-btn">
+                            <i class="fa fa-behance" style="color: #0057FF;"></i>
+                            <span>behance.net/omar_13</span>
+                        </a>
+                        <a href="https://pin.it/2JDRQeHfb" target="_blank" rel="noopener noreferrer"
+                            class="canva-contact-btn">
+                            <i class="fa fa-pinterest-p" style="color: #E60023;"></i>
+                            <span>Pinterest &mdash; pin.it/2JDRQeHfb</span>
+                        </a>
+                    </div>
+
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+                        <a href="projects.html" class="btn btn-outline">
+                            <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Back to Projects
+                        </a>
+                    </div>
+
+                    <!-- Slide 10 Final Display Typography -->
+                    <div class="canva-thank-you">THANK YOU</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fullscreen Interactive Lightbox Modal -->
+        <div id="creative-lightbox" class="creative-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="creative-lightbox-backdrop"></div>
+            <div class="creative-lightbox-container">
+                <div class="creative-lightbox-header">
+                    <div class="creative-lightbox-info">
+                        <span class="creative-lightbox-category">Artwork</span>
+                        <h3 class="creative-lightbox-title">Design Preview</h3>
+                        <p class="creative-lightbox-subtitle"></p>
+                    </div>
+                    <button class="creative-lightbox-close" aria-label="Close fullscreen view">&times;</button>
+                </div>
+                <div class="creative-lightbox-body">
+                    <div class="creative-lightbox-media"></div>
+                </div>
+                <div class="creative-lightbox-footer">
+                    <div style="display: flex; gap: 0.6rem; align-items: center;">
+                        <button class="creative-lightbox-nav-btn creative-lightbox-prev" aria-label="Previous artwork">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+                        <button class="creative-lightbox-nav-btn creative-lightbox-next" aria-label="Next artwork">
+                            <i class="fa fa-chevron-right"></i>
+                        </button>
+                        <span
+                            style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-left: 0.5rem;">Use
+                            &larr; &rarr; arrows or Esc</span>
+                    </div>
+                    <a href="#" download class="creative-lightbox-download">
+                        <i class="fa fa-download"></i>
+                        <span>Download Full Resolution</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Lab Footer (Original Website Footer) -->
+    <footer class="lab-footer">
+        <div class="container">
+            <p class="arabic-quote">&#x201C;&#x628;&#x641;&#x643; &#x627;&#x644;&#x62D;&#x627;&#x62C;&#x627;&#x62A;
+                &#x639;&#x634;&#x627;&#x646; &#x623;&#x641;&#x647;&#x645;&#x647;&#x627;&#x2026;
+                &#x648;&#x628;&#x639;&#x62F;&#x64A;&#x646; &#x623;&#x628;&#x646;&#x64A;&#x647;&#x627;
+                &#x623;&#x62D;&#x633;&#x646; &#x645;&#x646; &#x627;&#x644;&#x623;&#x648;&#x644;.&#x201D;</p>
+            <p>&copy; 2026 Omar Abdelaziz Ali | Built with Passion &amp; Code</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        &uarr;
+    </button>
+
+    <!-- Scripts (Same as rest of website) -->
+    <script src="js/background-system.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/scroll-system.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/creative-interactive.js"></script>
+</body>
+
+</html>

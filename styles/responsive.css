@@ -159,3 +159,41 @@
     /* Mission card */
     .mission-card { padding: 1.2rem 1rem; }
 }
+
+/* ── Presentation & Modals Responsive (≤ 768px) ── */
+@media (max-width: 768px) {
+    .creative-featured-banner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.6rem 1.4rem;
+        gap: 1.5rem;
+    }
+    .featured-banner-title { font-size: 1.45rem; }
+    .featured-banner-actions { flex-direction: column; align-items: stretch; }
+    .featured-banner-actions .btn { width: 100%; text-align: center; justify-content: center; }
+    .featured-banner-preview { width: 100%; height: 180px; flex: none; }
+
+    .presentation-showcase { padding: 1.2rem; }
+    .pres-title { font-size: 1.35rem; }
+    .pres-header { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+    .pres-nav-btn { width: 38px; height: 38px; opacity: 0.9 !important; }
+    .pres-btn-prev { left: 0.5rem; }
+    .pres-btn-next { right: 0.5rem; }
+    .pres-player-top { opacity: 1; top: 0.5rem; left: 0.5rem; right: 0.5rem; }
+    .pres-thumb { flex: 0 0 80px; height: 45px; }
+    .pres-actions-bar { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+    .pres-actions-left { flex-direction: column; width: 100%; }
+    .pres-actions-left .btn { width: 100%; text-align: center; justify-content: center; }
+    .pres-hint { display: none; }
+    .modal-dialog { max-height: 96vh; border-radius: var(--radius-md); }
+    .gallery-viewer { height: 45vh; }
+}
+
+@media (max-width: 480px) {
+    .presentation-showcase { padding: 1rem 0.75rem; }
+    .pres-thumb { flex: 0 0 65px; height: 38px; }
+    .pres-thumb-num { font-size: 0.55rem; }
+    .modal-header { padding: 1rem; }
+    .modal-body { padding: 1rem; }
+    .gallery-viewer { height: 36vh; }
+}

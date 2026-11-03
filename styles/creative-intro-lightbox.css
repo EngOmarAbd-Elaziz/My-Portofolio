@@ -1,0 +1,514 @@
+/* ==============================================================
+   Creative Intro Animation Overlay (Pen Tool / Palette & Canvas)
+   Matches the intro experience of index.html but bespoke to Creative
+   ============================================================== */
+
+.creative-intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20000;
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease, backdrop-filter 0.8s ease;
+}
+
+.creative-intro-overlay.hidden {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    pointer-events: none;
+    transform: scale(1.06);
+}
+
+.creative-tool-wrapper {
+    position: relative;
+    transform: translateY(-150vh) rotate(-15deg);
+    animation: dropInPen 1.5s cubic-bezier(0.2, 0.8, 0.2, 1.2) forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+@keyframes dropInPen {
+    0% {
+        transform: translateY(-150vh) rotate(-20deg) scale(0.8);
+    }
+    60% {
+        transform: translateY(25px) rotate(6deg) scale(1.05);
+    }
+    80% {
+        transform: translateY(-12px) rotate(-2deg) scale(0.98);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+}
+
+.creative-tool {
+    position: relative;
+    filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.55));
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.creative-tool-wrapper:hover .creative-tool {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.creative-tool-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170%;
+    height: 170%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, rgba(139, 92, 246, 0.2) 40%, transparent 70%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    border-radius: 50%;
+}
+
+.creative-tool-wrapper.ready .creative-tool-glow {
+    opacity: 1;
+    animation: creativePulse 3s infinite alternate;
+}
+
+@keyframes creativePulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+}
+
+.creative-click-to-start {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 1.15rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.creative-tool-wrapper.ready .creative-click-to-start {
+    opacity: 1;
+    transform: translateY(0);
+    animation: creativeTextPulse 2s infinite alternate;
+}
+
+@keyframes creativeTextPulse {
+    0% {
+        opacity: 0.6;
+        text-shadow: 0 0 0px transparent;
+    }
+    100% {
+        opacity: 1;
+        color: #F8FAFC;
+        text-shadow: 0 0 14px var(--highlight);
+    }
+}
+
+/* Creative Color Ripples (Paint splash / canvas ring effect) */
+.creative-ripple-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.creative-tool-wrapper.ready ~ .creative-ripple-container,
+.creative-intro-overlay:has(.creative-tool-wrapper.ready) .creative-ripple-container {
+    opacity: 1;
+}
+
+.creative-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border: 2px solid var(--highlight);
+    box-shadow: 0 0 25px var(--highlight), inset 0 0 15px var(--highlight);
+    opacity: 0;
+}
+
+.creative-ripple.ripple-accent {
+    border-color: #A855F7;
+    box-shadow: 0 0 25px #A855F7, inset 0 0 15px #A855F7;
+}
+
+.creative-ripple.ripple-warm {
+    border-color: #F97316;
+    box-shadow: 0 0 25px #F97316, inset 0 0 15px #F97316;
+}
+
+.creative-tool-wrapper.ready ~ .creative-ripple-container .creative-ripple,
+.creative-intro-overlay:has(.creative-tool-wrapper.ready) .creative-ripple-container .creative-ripple {
+    animation: creativeRippleAnim 4.5s linear infinite;
+}
+
+.creative-ripple:nth-child(2) {
+    animation-delay: 1.5s !important;
+}
+
+.creative-ripple:nth-child(3) {
+    animation-delay: 3s !important;
+}
+
+@keyframes creativeRippleAnim {
+    0% {
+        width: 80px;
+        height: 80px;
+        opacity: 0.9;
+    }
+    100% {
+        width: 850px;
+        height: 850px;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .creative-tool {
+        transform: scale(0.85);
+    }
+    .creative-tool-wrapper:hover .creative-tool {
+        transform: scale(0.85);
+    }
+    .creative-ripple-container {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+    .creative-click-to-start {
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+    }
+}
+
+/* ==============================================================
+   Fullscreen Media Lightbox Modal (Images & Video)
+   ============================================================== */
+
+.creative-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.creative-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.creative-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 12, 22, 0.92);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    z-index: 1;
+}
+
+.creative-lightbox-container {
+    position: relative;
+    z-index: 2;
+    background: var(--surface-solid);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 1100px;
+    max-height: 94vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+    transform: scale(0.95) translateY(20px);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.creative-lightbox.active .creative-lightbox-container {
+    transform: scale(1) translateY(0);
+}
+
+.creative-lightbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.8rem;
+    border-bottom: 1px solid var(--surface-border);
+    background: var(--surface-color);
+    gap: 1rem;
+}
+
+.creative-lightbox-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.creative-lightbox-category {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--highlight);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.creative-lightbox-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.creative-lightbox-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.creative-lightbox-close {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--surface-border);
+    color: var(--text-primary);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.6rem;
+    line-height: 1;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+.creative-lightbox-close:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #EF4444;
+    transform: rotate(90deg);
+}
+
+.creative-lightbox-body {
+    flex: 1;
+    overflow: auto;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 8, 16, 0.5);
+    min-height: 300px;
+}
+
+.creative-lightbox-media {
+    max-width: 100%;
+    max-height: 68vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.creative-lightbox-media img {
+    max-width: 100%;
+    max-height: 68vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.creative-lightbox-media video {
+    max-width: 100%;
+    max-height: 68vh;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+
+.creative-lightbox-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.8rem;
+    border-top: 1px solid var(--surface-border);
+    background: var(--surface-color);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.creative-lightbox-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--highlight);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    background: rgba(34, 211, 238, 0.08);
+    transition: all 0.3s ease;
+}
+
+.creative-lightbox-download:hover {
+    background: var(--highlight);
+    color: #0F172A;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+}
+
+.creative-lightbox-nav-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--surface-border);
+    color: var(--text-primary);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.creative-lightbox-nav-btn:hover {
+    background: var(--highlight);
+    color: #0F172A;
+    border-color: var(--highlight);
+}
+
+@media (max-width: 768px) {
+    .creative-lightbox {
+        padding: 0.75rem;
+    }
+    .creative-lightbox-container {
+        max-height: 96vh;
+    }
+    .creative-lightbox-header {
+        padding: 1rem 1.2rem;
+    }
+    .creative-lightbox-title {
+        font-size: 1.1rem;
+    }
+    .creative-lightbox-body {
+        padding: 0.75rem;
+    }
+    .creative-lightbox-media img,
+    .creative-lightbox-media video {
+        max-height: 60vh;
+    }
+    .creative-lightbox-footer {
+        padding: 0.8rem 1.2rem;
+    }
+}
+
+/* Light Theme Lightbox Enhancements */
+body.theme-light .creative-lightbox-container {
+    background: #FFFFFF;
+    border-color: rgba(15, 23, 42, 0.15);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+body.theme-light .creative-lightbox-header {
+    background: #F8FAFC;
+    border-bottom-color: rgba(15, 23, 42, 0.1);
+}
+
+body.theme-light .creative-lightbox-category {
+    color: #1D4ED8;
+}
+
+body.theme-light .creative-lightbox-title {
+    color: #0F172A;
+}
+
+body.theme-light .creative-lightbox-subtitle {
+    color: #475569;
+}
+
+body.theme-light .creative-lightbox-close {
+    background: rgba(15, 23, 42, 0.05);
+    border-color: rgba(15, 23, 42, 0.12);
+    color: #0F172A;
+}
+
+body.theme-light .creative-lightbox-close:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #DC2626;
+}
+
+body.theme-light .creative-lightbox-body {
+    background: #F1F5F9;
+}
+
+body.theme-light .creative-lightbox-footer {
+    background: #F8FAFC;
+    border-top-color: rgba(15, 23, 42, 0.1);
+}
+
+body.theme-light .creative-lightbox-download {
+    color: #1D4ED8;
+    background: rgba(29, 78, 216, 0.08);
+    border-color: rgba(29, 78, 216, 0.25);
+}
+
+body.theme-light .creative-lightbox-download:hover {
+    background: #1D4ED8;
+    color: #FFFFFF;
+}
+
+body.theme-light .creative-lightbox-nav-btn {
+    background: rgba(15, 23, 42, 0.05);
+    border-color: rgba(15, 23, 42, 0.12);
+    color: #0F172A;
+}
+
+body.theme-light .creative-lightbox-nav-btn:hover {
+    background: #1D4ED8;
+    color: #FFFFFF;
+    border-color: #1D4ED8;
+}
+
+
